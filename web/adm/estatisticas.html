@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatísticas | ConectaCausa</title>
+  <link rel="stylesheet" href="./estatisticas.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="../segundatela.html"><span class="brand-mark">♡</span><span>Conecta<span>Causa</span></span></a>
+    <div class="side-label">PAINEL ADMINISTRATIVO</div>
+    <a class="side-link active" href="./estatisticas.html"><span>▦</span> Estatísticas</a>
+    <a class="side-link" href="../segundatela.html"><span>⌂</span> Voltar ao site</a>
+    <div class="sidebar-bottom">
+      <div class="admin-chip"><span class="admin-avatar">A</span><span><strong>Administrador</strong><small>Área restrita</small></span></div>
+      <button id="sair" class="logout">↪ Sair da conta</button>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><p class="eyebrow">CONECTACAUSA / ADMINISTRAÇÃO</p><h1>Painel de estatísticas</h1><p class="subtitle">Acompanhe os resultados e o alcance da plataforma.</p></div>
+      <div class="top-actions"><span class="live-dot"></span><span>Dados do banco de dados</span></div>
+    </header>
+
+    <div id="aviso" class="notice" role="status">Carregando informações...</div>
+
+    <section class="cards" aria-label="Resumo geral">
+      <article class="metric-card"><div class="metric-icon purple">♧</div><p>Usuários cadastrados</p><strong id="totalUsuarios">—</strong><small>Contas na plataforma</small></article>
+      <article class="metric-card"><div class="metric-icon pink">♡</div><p>ONGs cadastradas</p><strong id="totalOngs">—</strong><small>Organizações participantes</small></article>
+      <article class="metric-card"><div class="metric-icon blue">↗</div><p>Doações registradas</p><strong id="totalDoacoes">—</strong><small>Registros no sistema</small></article>
+      <article class="metric-card"><div class="metric-icon gold">＋</div><p>Quantidade doada</p><strong id="quantidadeDoada">—</strong><small>Soma do campo quantidade</small></article>
+    </section>
+
+    <section class="charts-grid">
+      <article class="panel chart-panel"><div class="panel-heading"><div><p class="eyebrow">ACOMPANHAMENTO</p><h2>Doações por mês</h2></div><span class="panel-tag">Últimos 6 meses</span></div><div class="chart-wrap"><canvas id="graficoMensal" aria-label="Gráfico de doações por mês"></canvas></div></article>
+      <article class="panel chart-panel"><div class="panel-heading"><div><p class="eyebrow">DISTRIBUIÇÃO</p><h2>Status das doações</h2></div></div><div class="chart-wrap doughnut-wrap"><canvas id="graficoStatus" aria-label="Gráfico de status das doações"></canvas></div><p id="semStatus" class="empty-chart" hidden>Ainda não existem doações registradas.</p></article>
+    </section>
+
+    <section class="panel note-panel"><div class="note-icon">i</div><div><h2>Sobre os indicadores</h2><p>Os números e gráficos são carregados pela API a partir das tabelas de usuários, ONGs e doações. Quando novos registros forem adicionados ao banco, o painel será atualizado ao recarregar esta página.</p></div><button id="atualizar" class="refresh">↻ Atualizar dados</button></section>
+    <footer>ConectaCausa © <span id="ano"></span> · Painel administrativo</footer>
+  </main>
+  <script src="./estatisticas.js"></script>
+</body>
+</html>

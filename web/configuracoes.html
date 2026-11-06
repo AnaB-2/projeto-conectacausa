@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Configurações - ConectaCausa</title>
+
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="./css/configuracoes.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <button id="botao-tema" title="Alternar tema">
+        🌙
+    </button>
+
+    <header>
+
+        <div class="grupoLogo">
+            <a href="./segundatela.html">
+                <img
+                    src="./img/logo_novaa.semfundo.png"
+                    alt="Logo ConectaCausa"
+                >
+            </a>
+        </div>
+
+        <div class="links-header">
+            <a href="./segundatela.html">Início</a>
+            <a href="./quemsomos.html">Quem somos</a>
+            <a href="./doar.html">Doações</a>
+
+            <div class="menu-ongs">
+                <a href="#">
+                    ONGs
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+
+                <div class="submenu-ongs">
+                    <a href="./categ.html">Categorias</a>
+                    <a href="./cadastro.html">Cadastro de ONGs</a>
+                </div>
+            </div>
+        </div>
+
+        <nav id="menuCabecalho" class="menuFechado">
+
+            <div class="topo">
+                <h3>Menu</h3>
+                <button class="link btnFechar">[ x ]</button>
+            </div>
+
+            <a href="./index.html">Início</a>
+            <a href="./quemsomos.html">Quem somos</a>
+            <a href="./doar.html">Quero doar dinheiro</a>
+            <a href="./categ.html">Categorias</a>
+            <a href="./cadastro.html">Quero ser uma ONG</a>
+            <a href="./perfil.html">Meu perfil</a>
+
+            <p class="base">
+                <span class="ano"></span>
+                ConectaCausa. Todos os direitos reservados.
+            </p>
+
+        </nav>
+
+        <button class="botaoMenu">
+            <div class="ret1"></div>
+            <div class="ret2"></div>
+            <div class="ret3"></div>
+        </button>
+
+    </header>
+
+    <main class="config-page">
+
+        <section class="config-card">
+
+            <h1>
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+            </h1>
+
+            <p class="subtitulo">
+                Gerencie seus dados e preferências.
+            </p>
+
+            <!-- Dados pessoais -->
+            <div class="config-secao">
+
+                <h2>Dados pessoais</h2>
+
+                <label>
+                    Nome
+                    <input id="nome" type="text">
+                </label>
+
+                <label>
+                    E-mail
+                    <input id="email" type="email">
+                </label>
+
+                <label>
+                    Telefone
+                    <input id="telefone" type="tel">
+                </label>
+
+                <button id="salvar" class="botao">
+                    Salvar alterações
+                </button>
+
+            </div>
+
+            <!-- Preferências -->
+            <div class="config-secao">
+
+                <h2>Preferências</h2>
+
+                <label class="opcao">
+                    <input
+                        id="notificacoes"
+                        type="checkbox"
+                        checked
+                    >
+                    <span>
+                        Receber notificações sobre campanhas e doações
+                    </span>
+                </label>
+
+                <label class="opcao">
+                    <input id="tema" type="checkbox">
+                    <span>Usar tema escuro</span>
+                </label>
+
+            </div>
+
+            <!-- Conta -->
+            <div class="config-secao">
+
+                <h2>Conta</h2>
+
+                <button id="sair" class="botao-sair">
+                    Sair da conta
+                </button>
+
+            </div>
+
+            <a class="voltar" href="./perfil.html">
+                ← Voltar para meu perfil
+            </a>
+
+        </section>
+
+    </main>
+
+    <script>
+        const usuario = JSON.parse(
+            sessionStorage.getItem('usuarioLogado')
+        );
+
+        if (!usuario) {
+            location.href = './entrar.html';
+        } else {
+            nome.value = usuario.nome || '';
+            email.value = usuario.email || '';
+            telefone.value = usuario.telefone || '';
+        }
+
+        salvar.onclick = () => {
+            const atual = {
+                ...usuario,
+                nome: nome.value,
+                email: email.value,
+                telefone: telefone.value
+            };
+
+            sessionStorage.setItem(
+                'usuarioLogado',
+                JSON.stringify(atual)
+            );
+
+            alert('Alterações salvas!');
+        };
+
+        tema.onchange = () => {
+            document.body.classList.toggle(
+                'tema-escuro',
+                tema.checked
+            );
+
+            localStorage.setItem(
+                'temaEscuro',
+                tema.checked
+            );
+        };
+
+        tema.checked = localStorage.getItem('temaEscuro') === 'true';
+
+        document.body.classList.toggle(
+            'tema-escuro',
+            tema.checked
+        );
+
+        sair.onclick = () => {
+            sessionStorage.clear();
+            location.href = './entrar.html';
+        };
+    </script>
+
+    <script src="./script/scripts.js"></script>
+
+</body>
+
+</html>

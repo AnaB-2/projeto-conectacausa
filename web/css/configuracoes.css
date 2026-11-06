@@ -1,0 +1,130 @@
+.config-page {
+    width: 90%;
+    max-width: 850px;
+    margin: 45px auto;
+    padding-bottom: 50px;
+}
+
+.config-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 35px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .12);
+}
+
+.config-card h1 {
+    margin: 0;
+    color: rgb(108, 47, 169);
+    font-size: 32px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-top: 7px;
+}
+
+.config-secao {
+    border-top: 1px solid #eee;
+    margin-top: 25px;
+    padding-top: 22px;
+}
+
+.config-secao h2 {
+    font-size: 20px;
+    color: rgb(108, 47, 169);
+    margin: 0 0 16px;
+}
+
+label:not(.opcao) {
+    display: block;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin-top: 7px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus {
+    border-color: rgb(108, 47, 169);
+}
+
+.opcao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 13px 0;
+    color: #444;
+}
+
+.opcao input {
+    width: 18px;
+    height: 18px;
+}
+
+.botao,
+.botao-sair {
+    border: 0;
+    border-radius: 11px;
+    padding: 12px 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao {
+    background: rgb(108, 47, 169);
+    color: #fff;
+}
+
+.botao-sair {
+    background: #dc3545;
+    color: #fff;
+}
+
+.voltar {
+    display: inline-block;
+    margin-top: 25px;
+    color: rgb(108, 47, 169);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Tema escuro */
+body.tema-escuro .config-card {
+    background: #222;
+    color: #f1f1f1;
+}
+
+body.tema-escuro .subtitulo,
+body.tema-escuro label {
+    color: #ddd;
+}
+
+body.tema-escuro input[type="text"],
+body.tema-escuro input[type="email"],
+body.tema-escuro input[type="tel"] {
+    background: #333;
+    color: #fff;
+    border-color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .config-card {
+        padding: 22px;
+    }
+}
+
+body{
+    background-color: white;
+}

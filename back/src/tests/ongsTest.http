@@ -1,0 +1,38 @@
+# url ou dominio
+@URL = http://localhost
+# Porta do servidor
+@PORT = 3650
+# endpoint ou rota do teste
+@ENDPOINT = ongs
+# uri - rota final do teste
+@URI = {{URL}}:{{PORT}}/{{ENDPOINT}}
+
+GET {{URI}}
+
+###
+GET {{URI}}/1
+
+###
+POST {{URI}}
+Content-Type: application/json; charset=utf-8
+
+  {
+      "nome_ong": "conectacausa",
+      "descricao": "ong para ajudar ongs",
+      "cnpj":2123131223112
+    }
+
+###
+PUT {{URI}}/2
+Content-Type: application/json; charset=utf-8
+
+    {
+
+      "nome_ong": "test",
+      "descricao": "test",
+      "cnpj":12123
+    }
+
+
+###
+DELETE {{URI}}/2

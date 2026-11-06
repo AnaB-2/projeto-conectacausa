@@ -1,0 +1,352 @@
+.perfil-page {
+    width: 90%;
+    max-width: 1050px;
+    margin: 40px auto 60px;
+}
+
+.perfil-cabecalho {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    background: #fff;
+    border-radius: 24px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .12);
+    margin-bottom: 22px;
+}
+
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    background: #f1eafa;
+    border: 4px solid rgb(108, 47, 169);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.avatar img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.etiqueta {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: rgb(108, 47, 169);
+}
+
+.perfil-cabecalho h1 {
+    margin: 4px 0;
+    color: rgb(108, 47, 169);
+    font-size: 34px;
+}
+
+.perfil-cabecalho p {
+    margin: 0;
+    color: #666;
+}
+
+.editar {
+    margin-left: auto;
+    background: rgb(108, 47, 169);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 17px;
+    border-radius: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.editar i {
+    margin-right: 6px;
+}
+
+.dados-card,
+.atividade-card,
+.atalhos-card {
+    background: #fff;
+    border-radius: 22px;
+    padding: 28px 32px;
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .1);
+    margin-bottom: 22px;
+}
+
+.dados-card h2,
+.atividade-card h2,
+.atalhos-card h2 {
+    margin: 0;
+    color: rgb(108, 47, 169);
+    font-size: 22px;
+}
+
+.dados-card h2 i,
+.atividade-card h2 i {
+    margin-right: 7px;
+}
+
+.dados-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dado {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #f7f3fa;
+    padding: 17px;
+    border-radius: 15px;
+    min-width: 0;
+}
+
+.dado > i {
+    color: rgb(108, 47, 169);
+    font-size: 21px;
+}
+
+.dado small,
+.dado strong {
+    display: block;
+}
+
+.dado small {
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.dado strong {
+    color: #333;
+    overflow-wrap: anywhere;
+}
+
+.titulo-secao p {
+    margin: 5px 0 20px;
+    color: #777;
+}
+
+.atividade-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.atividade {
+    text-align: center;
+    background: #f7f3fa;
+    border-radius: 17px;
+    padding: 22px;
+}
+
+.atividade > i {
+    font-size: 27px;
+    color: rgb(108, 47, 169);
+    margin-bottom: 9px;
+}
+
+.atividade strong,
+.atividade span {
+    display: block;
+}
+
+.atividade strong {
+    font-size: 27px;
+    color: #333;
+}
+
+.atividade span {
+    color: #666;
+    margin-top: 4px;
+}
+
+.atalhos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.atalhos-grid a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    text-decoration: none;
+    color: #333;
+    background: #f7f3fa;
+    border-radius: 15px;
+    padding: 17px;
+}
+
+.atalhos-grid a > i:first-child {
+    font-size: 22px;
+    color: rgb(108, 47, 169);
+}
+
+.atalhos-grid strong,
+.atalhos-grid span {
+    display: block;
+}
+
+.atalhos-grid span {
+    font-size: 13px;
+    color: #777;
+    margin-top: 4px;
+}
+
+.seta {
+    margin-left: auto;
+    color: #aaa !important;
+    font-size: 14px !important;
+}
+
+.sair {
+    display: block;
+    margin: 5px auto 0;
+    border: 0;
+    background: #dc3545;
+    color: #fff;
+    border-radius: 11px;
+    padding: 12px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sair:hover {
+    background: #bb2d3b;
+}
+
+/* Responsividade */
+@media (max-width: 750px) {
+    .perfil-cabecalho {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .editar {
+        margin-left: 0;
+    }
+
+    .dados-grid,
+    .atividade-grid,
+    .atalhos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dados-card,
+    .atividade-card,
+    .atalhos-card,
+    .perfil-cabecalho {
+        padding: 22px;
+    }
+
+    .perfil-cabecalho h1 {
+        font-size: 28px;
+    }
+}
+
+/* Tema escuro */
+body.tema-escuro .perfil-cabecalho,
+body.tema-escuro .dados-card,
+body.tema-escuro .atividade-card,
+body.tema-escuro .atalhos-card {
+    background: #222;
+    color: #f1f1f1;
+}
+
+body.tema-escuro .dado,
+body.tema-escuro .atividade,
+body.tema-escuro .atalhos-grid a {
+    background: #333;
+}
+
+body.tema-escuro .dado strong,
+body.tema-escuro .atividade strong,
+body.tema-escuro .atalhos-grid strong {
+    color: #fff;
+}
+
+body.tema-escuro .perfil-cabecalho p,
+body.tema-escuro .titulo-secao p,
+body.tema-escuro .dado small,
+body.tema-escuro .atividade span,
+body.tema-escuro .atalhos-grid span {
+    color: #ccc;
+}
+body{
+    background-color: white;
+}
+
+/* Foto de perfil escolhida pela pessoa */
+.avatar-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.avatar-botao {
+    padding: 0;
+    cursor: pointer;
+    appearance: none;
+}
+
+.avatar-botao img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.alterar-foto {
+    border: 0;
+    background: transparent;
+    color: rgb(108, 47, 169);
+    font-weight: 700;
+    cursor: pointer;
+    padding: 4px 7px;
+}
+
+.alterar-foto:hover { text-decoration: underline; }
+.ajuda-foto { color: #777; font-size: 11px; text-align: center; }
+
+/* Foto e nome no canto do cabeçalho da tela inicial */
+.usuario-logado .atalho-perfil {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: rgb(108, 47, 169);
+    text-decoration: none;
+    font-weight: 700;
+    max-width: 190px;
+}
+
+.usuario-logado .atalho-perfil img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(108, 47, 169);
+    background: #f1eafa;
+}
+
+.usuario-logado .atalho-perfil span {
+    max-width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .perfil-cabecalho { flex-wrap: wrap; padding: 22px; }
+    .perfil-cabecalho .editar { margin-left: 0; }
+    .usuario-logado .atalho-perfil span { display: none; }
+}
