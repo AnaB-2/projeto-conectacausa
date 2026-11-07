@@ -15,67 +15,51 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     >
+  <link rel="stylesheet" href="./css/padrao-cabecalho.css">
 </head>
 
 <body>
 
-    <header>
-
-        <div class="grupoLogo">
-            <a href="./segundatela.html">
-                <img
-                    src="./img/logo_novaa.semfundo.png"
-                    alt="Logo ConectaCausa"
-                >
-            </a>
-        </div>
-
-        <div class="links-header">
-            <a href="./segundatela.html">Início</a>
-            <a href="./quemsomos.html">Quem somos</a>
-            <a href="./doar.html">Doações</a>
-
-            <div class="menu-ongs">
-                <a href="#">
-                    ONGs
-                    <i class="fas fa-chevron-down"></i>
-                </a>
-
-                <div class="submenu-ongs">
-                    <a href="./categ.html">Categorias</a>
-                    <a href="./cadastro.html">Cadastro de ONGs</a>
-                </div>
-            </div>
-        </div>
-
-        <nav id="menuCabecalho" class="menuFechado">
-
-            <div class="topo">
-                <h3>Menu</h3>
-                <button class="link btnFechar">[ x ]</button>
-            </div>
-
-            <a href="./index.html">Início</a>
-            <a href="./quemsomos.html">Quem somos</a>
-            <a href="./doar.html">Quero doar dinheiro</a>
-            <a href="./categ.html">Categorias</a>
-            <a href="./cadastro.html">Quero ser uma ONG</a>
-            <a href="./perfil.html">Meu perfil</a>
-
-            <p class="base">
-                <span class="ano"></span>
-                ConectaCausa. Todos os direitos reservados.
-            </p>
-
-        </nav>
-
-        <button class="botaoMenu">
-            <div class="ret1"></div>
-            <div class="ret2"></div>
-            <div class="ret3"></div>
-        </button>
-
-    </header>
+    <header class="cc-cabecalho">
+  <div class="grupoLogo">
+    <a href="./segundatela.html"><img src="./img/logo_novaa.semfundo.png" alt="Logo ConectaCausa"></a>
+  </div>
+  <div class="links-header">
+    <a href="./segundatela.html">Início</a>
+    <a href="./quemsomos.html">Quem somos</a>
+    <a href="./doar.html">Doações</a>
+    <div class="menu-ongs">
+      <a href="#">ONGs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
+      <div class="submenu-ongs">
+        <a href="./categ.html">Categorias</a>
+        <a href="./cadastro.html">Cadastro de ONGs</a>
+      </div>
+    </div>
+  </div>
+  <div class="usuario usuario-logado">
+        <a class="atalho-perfil" href="./perfil.html" aria-label="Abrir meu perfil">
+          <img id="fotoMenuUsuario" src="./img/usuario-semfundo.png" alt="Foto de perfil">
+          <span id="nomeMenuUsuario">Meu perfil</span>
+        </a>
+    </div>
+  <nav id="menuCabecalho" class="menuFechado" aria-label="Menu principal">
+    <div class="topo">
+      <h3>Menu</h3>
+      <button type="button" class="link btnFechar" aria-label="Fechar menu">×</button>
+    </div>
+    <a href="./segundatela.html">Início</a>
+    <a href="./quemsomos.html">Quem somos</a>
+    <a href="./doar.html">Quero doar dinheiro</a>
+    <a href="./categ.html">Categorias</a>
+    <a href="./cadastro.html">Quero ser uma ONG</a>
+    <a href="./perfil.html">Meu perfil</a>
+    <a href="./entrar.html">Entrar</a>
+    <p class="base"><span class="ano"></span> ConectaCausa. Todos os direitos reservados.</p>
+  </nav>
+  <button type="button" class="botaoMenu" aria-label="Abrir menu" aria-controls="menuCabecalho">
+    <div class="ret1"></div><div class="ret2"></div><div class="ret3"></div>
+  </button>
+</header>
 
     <main class="perfil-page">
 
