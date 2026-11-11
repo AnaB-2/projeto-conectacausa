@@ -1,4 +1,6 @@
+
 import { Href, Link, useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 import {
   Image,
   Linking,
@@ -16,7 +18,12 @@ export default function Dashboard() {
   return (
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={styles.header}>
+        <LinearGradient
+          colors={["#8B5BCB", "#5E2D98"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.header}
+        >
           <View>
             <Text style={styles.ola}>Olá!</Text>
             <Text style={styles.bem}>Que bom ter você aqui.</Text>
@@ -26,9 +33,17 @@ export default function Dashboard() {
             style={styles.avatar}
             onPress={() => router.push("/profile")}
           >
-            <Text style={{ color: "#743BB5", fontSize: 22, fontWeight: "800" }}>A</Text>
+            <Text
+              style={{
+                color: "#743BB5",
+                fontSize: 22,
+                fontWeight: "800",
+              }}
+            >
+              A
+            </Text>
           </Pressable>
-        </View>
+        </LinearGradient>
 
         <View style={styles.search}>
           <Text>⌕</Text>
@@ -83,9 +98,15 @@ export default function Dashboard() {
           href="/categories"
         />
 
-        <Pressable onPress={() => router.push("/categories")} style={styles.categoryLink}>
-          <Text style={styles.categoryLinkText}>Ver todas as categorias  ›</Text>
+        <Pressable
+          onPress={() => router.push("/categories")}
+          style={styles.categoryLink}
+        >
+          <Text style={styles.categoryLinkText}>
+            Ver todas as categorias  ›
+          </Text>
         </Pressable>
+
         <View style={styles.categories}>
           {[
             [require("@/assets/images/icon-paw.png"), "Proteção Animal"],
@@ -93,7 +114,11 @@ export default function Dashboard() {
             [require("@/assets/images/icon-people.png"), "Apoio a famílias"],
             [require("@/assets/images/icon-book.png"), "Educação"],
           ].map(([icon, name]: any) => (
-            <Pressable style={styles.category} key={name} onPress={() => router.push("/categories")}>
+            <Pressable
+              style={styles.category}
+              key={name}
+              onPress={() => router.push("/categories")}
+            >
               <Image source={icon} style={styles.categoryIcon} />
               <Text style={styles.categoryText}>{name}</Text>
             </Pressable>
@@ -136,23 +161,67 @@ export default function Dashboard() {
           <Text style={styles.outline}>Ver perfil</Text>
         </Pressable>
 
-        <Section title="Encontre causas perto de você" link="Abrir mapa" href="/ongs" />
-        <Pressable style={styles.mapCard} onPress={() => Linking.openURL("https://www.google.com/maps/search/?api=1&query=ONGs+Taquaritinga+SP")}>
-          <Image source={{ uri: "https://staticmap.openstreetmap.de/staticmap.php?center=-21.4064,-48.5047&zoom=12&size=900x360&maptype=mapnik&markers=-21.4064,-48.5047,red-pushpin" }} style={styles.mapImage} />
+        <Section
+          title="Encontre causas perto de você"
+          link="Abrir mapa"
+          href="/ongs"
+        />
+
+        <Pressable
+          style={styles.mapCard}
+          onPress={() =>
+            Linking.openURL(
+              "https://www.google.com/maps/search/?api=1&query=ONGs+Taquaritinga+SP"
+            )
+          }
+        >
+          <Image
+            source={{
+              uri: "https://staticmap.openstreetmap.de/staticmap.php?center=-21.4064,-48.5047&zoom=12&size=900x360&maptype=mapnik&markers=-21.4064,-48.5047,red-pushpin",
+            }}
+            style={styles.mapImage}
+          />
+
           <View style={styles.mapCaption}>
             <View style={{ flex: 1 }}>
-              <Text style={styles.mapTitle}>ONGs e projetos na região</Text>
-              <Text style={styles.mapText}>Explore organizações e encontre uma causa para apoiar.</Text>
+              <Text style={styles.mapTitle}>
+                ONGs e projetos na região
+              </Text>
+              <Text style={styles.mapText}>
+                Explore organizações e encontre uma causa para apoiar.
+              </Text>
             </View>
+
             <Text style={styles.mapArrow}>↗</Text>
           </View>
         </Pressable>
 
-        <Section title="Conheça o projeto" link="Quem somos" href="/about" />
+        <Section
+          title="Conheça o projeto"
+          link="Quem somos"
+          href="/about"
+        />
+
         <View style={styles.infoLinks}>
-          <Pressable style={styles.infoLink} onPress={() => router.push("/about")}><Text style={styles.infoLinkText}>Sobre o ConectaCausa  ›</Text></Pressable>
-          <Pressable style={styles.infoLink} onPress={() => router.push("/cadastroOng")}><Text style={styles.infoLinkText}>Cadastrar uma ONG  ›</Text></Pressable>
+          <Pressable
+            style={styles.infoLink}
+            onPress={() => router.push("/about")}
+          >
+            <Text style={styles.infoLinkText}>
+              Sobre o ConectaCausa  ›
+            </Text>
+          </Pressable>
+
+          <Pressable
+            style={styles.infoLink}
+            onPress={() => router.push("/cadastroOng")}
+          >
+            <Text style={styles.infoLinkText}>
+              Cadastrar uma ONG  ›
+            </Text>
+          </Pressable>
         </View>
+
         <View style={styles.bottomSpace} />
       </ScrollView>
 
@@ -204,7 +273,7 @@ function Section({
 }: {
   title: string;
   link: string;
-  href:  Href;
+  href: Href;
 }) {
   return (
     <View style={styles.sectionLine}>
@@ -224,8 +293,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F7F4FB",
   },
+
   header: {
-    backgroundColor: "#743BB5",
     paddingTop: 55,
     paddingBottom: 24,
     paddingHorizontal: 20,
@@ -233,15 +302,18 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+
   ola: {
     color: "#fff",
     fontSize: 23,
     fontWeight: "800",
   },
+
   bem: {
     color: "#E8DDF3",
     marginTop: 3,
   },
+
   avatar: {
     width: 44,
     height: 44,
@@ -250,6 +322,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   search: {
     margin: 16,
     marginTop: -1,
@@ -262,10 +335,12 @@ const styles = StyleSheet.create({
     gap: 8,
     elevation: 2,
   },
+
   searchInput: {
     flex: 1,
     fontSize: 14,
   },
+
   sectionLine: {
     marginHorizontal: 20,
     marginTop: 16,
@@ -274,40 +349,48 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+
   sectionTitle: {
     fontSize: 18,
     fontWeight: "800",
     color: "#30243A",
   },
+
   link: {
     color: "#743BB5",
     fontWeight: "700",
   },
+
   row: {
     paddingHorizontal: 20,
     gap: 12,
   },
+
   campaign: {
     width: 245,
     borderRadius: 17,
     backgroundColor: "#743BB5",
     padding: 18,
   },
+
   tag: {
     color: "#E8D9F5",
     fontSize: 10,
     fontWeight: "800",
   },
+
   campaignTitle: {
     color: "#fff",
     fontSize: 19,
     fontWeight: "800",
     marginTop: 13,
   },
+
   campaignText: {
     color: "#E8DDF3",
     marginTop: 7,
   },
+
   smallButton: {
     backgroundColor: "#fff",
     color: "#743BB5",
@@ -317,12 +400,14 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 15,
   },
+
   categories: {
     flexDirection: "row",
     flexWrap: "wrap",
     paddingHorizontal: 20,
     gap: 10,
   },
+
   category: {
     backgroundColor: "#fff",
     width: "47%",
@@ -331,15 +416,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   emoji: {
     fontSize: 25,
   },
+
   categoryText: {
     fontSize: 10,
     color: "#555",
     marginTop: 5,
     textAlign: "center",
   },
+
   ong: {
     marginHorizontal: 20,
     backgroundColor: "#fff",
@@ -349,47 +437,116 @@ const styles = StyleSheet.create({
     alignItems: "center",
     elevation: 2,
   },
+
   ongImage: {
     width: 64,
     height: 64,
     borderRadius: 10,
   },
+
   ongInfo: {
     flex: 1,
     marginLeft: 12,
     marginRight: 8,
   },
+
   ongName: {
     fontSize: 16,
     fontWeight: "800",
     color: "#30243A",
   },
+
   ongDesc: {
     fontSize: 12,
     color: "#666",
     marginTop: 4,
     lineHeight: 17,
   },
+
   outline: {
     color: "#743BB5",
     fontWeight: "800",
     fontSize: 12,
   },
-  categoryIcon: { width: 42, height: 42, resizeMode: "contain", marginBottom: 8 },
-  categoryLink: { alignSelf: "flex-end", marginHorizontal: 20, marginBottom: 8 },
-  categoryLinkText: { color: "#743BB5", fontWeight: "800", fontSize: 13 },
-  mapCard: { marginHorizontal: 20, backgroundColor: "#fff", borderRadius: 16, overflow: "hidden", elevation: 2 },
-  mapImage: { width: "100%", height: 145, backgroundColor: "#E8E2ED" },
-  mapCaption: { padding: 14, flexDirection: "row", alignItems: "center" },
-  mapTitle: { color: "#35243E", fontWeight: "800", fontSize: 15 },
-  mapText: { color: "#766B7D", fontSize: 12, marginTop: 4 },
-  mapArrow: { color: "#743BB5", fontSize: 25, fontWeight: "800", paddingHorizontal: 5 },
-  infoLinks: { marginHorizontal: 20, gap: 9 },
-  infoLink: { backgroundColor: "#fff", padding: 14, borderRadius: 11 },
-  infoLinkText: { color: "#743BB5", fontWeight: "700" },
+
+  categoryIcon: {
+    width: 42,
+    height: 42,
+    resizeMode: "contain",
+    marginBottom: 8,
+  },
+
+  categoryLink: {
+    alignSelf: "flex-end",
+    marginHorizontal: 20,
+    marginBottom: 8,
+  },
+
+  categoryLinkText: {
+    color: "#743BB5",
+    fontWeight: "800",
+    fontSize: 13,
+  },
+
+  mapCard: {
+    marginHorizontal: 20,
+    backgroundColor: "#fff",
+    borderRadius: 16,
+    overflow: "hidden",
+    elevation: 2,
+  },
+
+  mapImage: {
+    width: "100%",
+    height: 145,
+    backgroundColor: "#E8E2ED",
+  },
+
+  mapCaption: {
+    padding: 14,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+
+  mapTitle: {
+    color: "#35243E",
+    fontWeight: "800",
+    fontSize: 15,
+  },
+
+  mapText: {
+    color: "#766B7D",
+    fontSize: 12,
+    marginTop: 4,
+  },
+
+  mapArrow: {
+    color: "#743BB5",
+    fontSize: 25,
+    fontWeight: "800",
+    paddingHorizontal: 5,
+  },
+
+  infoLinks: {
+    marginHorizontal: 20,
+    gap: 9,
+  },
+
+  infoLink: {
+    backgroundColor: "#fff",
+    padding: 14,
+    borderRadius: 11,
+  },
+
+  infoLinkText: {
+    color: "#743BB5",
+    fontWeight: "700",
+  },
+
   bottomSpace: {
     height: 95,
   },
+
   menu: {
     position: "absolute",
     left: 0,
@@ -403,28 +560,34 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     borderTopColor: "#E8E1EF",
   },
+
   menuItem: {
     alignItems: "center",
     justifyContent: "center",
   },
+
   icon: {
     fontSize: 23,
     color: "#777",
   },
+
   activeIcon: {
     fontSize: 23,
     color: "#743BB5",
   },
+
   active: {
     color: "#743BB5",
     fontSize: 11,
     fontWeight: "800",
   },
+
   menuText: {
     color: "#777",
     fontSize: 11,
     marginTop: 2,
   },
+
   donate: {
     width: 52,
     height: 52,
@@ -434,6 +597,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: -25,
   },
+
   plus: {
     color: "#fff",
     fontSize: 30,

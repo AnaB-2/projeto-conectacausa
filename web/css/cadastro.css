@@ -383,6 +383,22 @@
     transform: translateY(-50%) scale(0.95);
   }
   
+  .container.my-5 {
+    background: #fff !important;
+    position: relative;
+    z-index: 1;
+}
+
+#formCadastro {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+main,
+section {
+    background: #fff !important;
+}
+  
   /* ========== MENU RESPONSIVO ========== */
   header nav {
     position: fixed;
@@ -490,6 +506,8 @@
     height: 35px;
   }
 
+  
+
   /* ========== RESPONSIVIDADE ========== */
   @media screen and (max-width: 950px) {
     header {
@@ -524,6 +542,167 @@
       width: 4rem;
     }
   }
+
+
+/* ===== CADASTRO DE ONG ===== */
+
+.area-cadastro {
+    background: #faf8fc;
+    padding: 55px 20px 75px;
+    min-height: 75vh;
+}
+
+.cadastro-card {
+    max-width: 850px;
+    margin: auto;
+    padding: 40px 45px;
+    background: #fff;
+    border-radius: 22px;
+    border: 1px solid #e9e0f1;
+    box-shadow: 0 12px 40px rgba(80, 30, 110, 0.10);
+}
+
+.cadastro-titulo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.icone-cadastro {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4edfb;
+    color: #6c2fa9;
+    border-radius: 18px;
+    font-size: 27px;
+}
+
+.cadastro-titulo span {
+    color: #6c2fa9;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.cadastro-titulo h2 {
+    color: #512080;
+    font-size: 32px;
+    font-weight: 800;
+    margin: 10px 0;
+}
+
+.cadastro-titulo p {
+    color: #77717e;
+    font-size: 15px;
+}
+
+.cadastro-card .form-label {
+    color: #352a40;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.cadastro-card .form-control {
+    border: 1px solid #d9c8e8;
+    border-radius: 9px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+.cadastro-card .form-control:focus {
+    border-color: #6c2fa9;
+    box-shadow: 0 0 0 3px rgba(108, 47, 169, .13);
+}
+
+.cadastro-card textarea {
+    resize: vertical;
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #6c2fa9;
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-enviar:hover {
+    background: #512080;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px #6c2fa933;
+}
+
+.btn-enviar i {
+    margin-left: 8px;
+}
+
+.cadastro-seguranca {
+    text-align: center;
+    color: #77717e;
+    font-size: 12px;
+    margin: 18px 0 0;
+}
+
+.cadastro-seguranca i {
+    color: #6c2fa9;
+    margin-right: 5px;
+}
+
+/* MODO ESCURO */
+
+body.tema-escuro .area-cadastro {
+    background: #19151f;
+}
+
+body.tema-escuro .cadastro-card {
+    background: #282130;
+    border-color: #44364f;
+}
+
+body.tema-escuro .cadastro-titulo h2,
+body.tema-escuro .cadastro-card .form-label {
+    color: #f4edf9;
+}
+
+body.tema-escuro .cadastro-titulo p,
+body.tema-escuro .cadastro-seguranca {
+    color: #b9aebe;
+}
+
+body.tema-escuro .cadastro-card .form-control {
+    background: #30273a;
+    color: white;
+    border-color: #57436a;
+}
+
+body.tema-escuro .cadastro-card .form-control::placeholder {
+    color: #b9aebe;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 600px) {
+    .area-cadastro {
+        padding: 30px 12px 45px;
+    }
+
+    .cadastro-card {
+        padding: 28px 20px;
+    }
+
+    .cadastro-titulo h2 {
+        font-size: 27px;
+    }
+}
+
 
   @media screen and (max-width: 1100px) {
     .bannerBG {

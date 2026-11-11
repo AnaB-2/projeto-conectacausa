@@ -1,5 +1,7 @@
+
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function OngProfile() {
   const router = useRouter();
@@ -27,12 +29,18 @@ export default function OngProfile() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
+      <LinearGradient
+        colors={["#8B5BCB", "#5E2D98"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={styles.header}
+      >
         <Text style={styles.back} onPress={() => router.back()}>
           ‹
         </Text>
+
         <Text style={styles.headerTitle}>Perfil da ONG</Text>
-      </View>
+      </LinearGradient>
 
       <View style={styles.body}>
         <Image source={image} style={styles.logo} />
@@ -49,6 +57,7 @@ export default function OngProfile() {
           <Text style={styles.campaignTitle}>
             Ajude a causa da {name}
           </Text>
+
           <Text style={styles.text}>
             Apoie essa ONG e contribua para que esse trabalho continue.
           </Text>
@@ -70,34 +79,39 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F7F4FB",
   },
+
   header: {
-    backgroundColor: "#743BB5",
     paddingTop: 52,
     paddingBottom: 20,
     paddingHorizontal: 20,
     flexDirection: "row",
     alignItems: "center",
   },
+
   back: {
     fontSize: 35,
     color: "#fff",
     marginRight: 15,
   },
+
   headerTitle: {
     fontSize: 22,
     color: "#fff",
     fontWeight: "800",
   },
+
   body: {
     padding: 22,
     alignItems: "center",
   },
+
   logo: {
     width: 110,
     height: 110,
     borderRadius: 16,
     marginTop: 15,
   },
+
   name: {
     fontSize: 25,
     fontWeight: "800",
@@ -105,11 +119,13 @@ const styles = StyleSheet.create({
     marginTop: 12,
     textAlign: "center",
   },
+
   category: {
     color: "#743BB5",
     fontWeight: "700",
     marginTop: 4,
   },
+
   title: {
     alignSelf: "flex-start",
     fontSize: 19,
@@ -118,24 +134,28 @@ const styles = StyleSheet.create({
     marginTop: 28,
     marginBottom: 8,
   },
+
   text: {
     alignSelf: "flex-start",
     fontSize: 14,
     color: "#666",
     lineHeight: 21,
   },
+
   campaign: {
     width: "100%",
     backgroundColor: "#fff",
     padding: 16,
     borderRadius: 13,
   },
+
   campaignTitle: {
     fontSize: 17,
     fontWeight: "800",
     color: "#743BB5",
     marginBottom: 5,
   },
+
   button: {
     width: "100%",
     height: 52,
@@ -145,6 +165,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 25,
   },
+
   buttonText: {
     color: "#fff",
     fontWeight: "800",

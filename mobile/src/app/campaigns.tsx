@@ -1,4 +1,6 @@
+
 import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 import {
   Pressable,
   ScrollView,
@@ -10,38 +12,65 @@ import {
 export default function Campaigns() {
   const router = useRouter();
 
+  const campaigns = [
+    {
+      emoji: "🍎",
+      title: "Doe alimentos e transforme vidas",
+      category: "Combate à fome",
+      route: "/campaign-details",
+    },
+    {
+      emoji: "🐾",
+      title: "Ajude os animais",
+      category: "Proteção animal",
+      route: "/campaign-details(animals)",
+    },
+    {
+      emoji: "👥",
+      title: "Ajude famílias",
+      category: "Apoio a famílias",
+      route: "/campaign-details(families)",
+    },
+    {
+      emoji: "🎓",
+      title: "Educação para todos",
+      category: "Educação",
+      route: "/campaign-details(education)",
+    },
+  ];
+
   return (
     <View style={s.c}>
-      <View style={s.top}>
+      <LinearGradient
+        colors={["#8B5BCB", "#5E2D98"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={s.top}
+      >
         <Text style={s.back} onPress={() => router.back()}>
           ‹
         </Text>
 
         <Text style={s.topTitle}>Campanhas</Text>
-      </View>
+      </LinearGradient>
 
       <ScrollView>
         <Text style={s.intro}>
           Encontre uma causa para apoiar.
         </Text>
 
-        {[
-          ["🍎", "Doe alimentos e transforme vidas", "Combate a fome"],
-          ["🐾", "Ajude os animais", "Proteção animal"],
-          ["👥", "Ajude familias", "Apoio a familias"],
-          ["🎓", "Educação para todos", "Educação"],
-        ].map(([e, t, c]) => (
+        {campaigns.map((campaign) => (
           <Pressable
-            key={t}
+            key={campaign.category}
             style={s.card}
-            onPress={() => router.push("/campaign-details")}
+            onPress={() => router.push(campaign.route)}
           >
-            <Text style={s.big}>{e}</Text>
+            <Text style={s.big}>{campaign.emoji}</Text>
 
             <View style={{ flex: 1 }}>
-              <Text style={s.tag}>{c}</Text>
+              <Text style={s.tag}>{campaign.category}</Text>
 
-              <Text style={s.title}>{t}</Text>
+              <Text style={s.title}>{campaign.title}</Text>
 
               <Text style={s.desc}>
                 Faça parte dessa campanha e ajude a transformar vidas.
@@ -63,7 +92,6 @@ const s = StyleSheet.create({
   },
 
   top: {
-    backgroundColor: "#743BB5",
     paddingTop: 52,
     paddingBottom: 20,
     paddingHorizontal: 20,

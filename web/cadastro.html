@@ -72,73 +72,112 @@
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
   <br>  
+<main class="area-cadastro">
+  <div class="cadastro-card">
 
-  <div class="container my-5">
-    <h2 class="mb-4" style="color: rgb(108, 47, 169);">Cadastrar ONG</h2>
+    <div class="cadastro-titulo">
+      <div class="icone-cadastro">
+        <i class="fas fa-hand-holding-heart"></i>
+      </div>
+
+      <span>FAÇA PARTE DESSA CAUSA</span>
+      <h2>Cadastrar ONG</h2>
+      <p>
+        Cadastre sua organização e conecte-se a pessoas
+        que desejam fazer a diferença!
+      </p>
+    </div>
 
     <form id="formCadastro">
+
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="nome" class="form-label">Nome da ONG</label>
-          <input type="text" class="form-control" id="nome" placeholder="Ex: Alimento Solidário" required>
+          <input type="text" class="form-control" id="nome"
+            placeholder="Ex: Alimento Solidário" required>
         </div>
+
         <div class="col-md-6">
           <label for="cnpj" class="form-label">CNPJ</label>
-          <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0000-00" maxlength="18" required>
+          <input type="text" class="form-control" id="cnpj"
+            placeholder="00.000.000/0000-00" maxlength="18" required>
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-md-6">
           <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" placeholder="zerofome@gmail.com" required>
+          <input type="email" class="form-control" id="email"
+            placeholder="exemplo@gmail.com" required>
         </div>
+
         <div class="col-md-6">
           <label for="telefone" class="form-label">Telefone</label>
-          <input type="text" class="form-control" id="telefone" placeholder="(00) 00000-0000" maxlength="15" required>
+          <input type="text" class="form-control" id="telefone"
+            placeholder="(00) 00000-0000" maxlength="15" required>
         </div>
       </div>
 
       <div class="row mb-3">
         <div class="col-md-3">
           <label for="cep" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="cep" placeholder="00000-000" maxlength="9" required>
+          <input type="text" class="form-control" id="cep"
+            placeholder="00000-000" maxlength="9" required>
         </div>
+
         <div class="col-md-5">
           <label for="cidade" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="cidade" maxlength="200" placeholder="cidade Exemplo" required>
+          <input type="text" class="form-control" id="cidade"
+            placeholder="Cidade Exemplo" maxlength="200" required>
         </div>
+
         <div class="col-md-4">
           <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="endereco" placeholder="Rua Exemplo" required>
+          <input type="text" class="form-control" id="endereco"
+            placeholder="Rua Exemplo" required>
         </div>
       </div>
 
       <div class="row mb-3">
-        <div class="col-md-2">
-          <label for="numero" class="form-label">N°</label>
-          <input type="number" class="form-control" id="numero" placeholder="22" required>
+        <div class="col-md-3">
+          <label for="numero" class="form-label">Número</label>
+          <input type="number" class="form-control" id="numero"
+            placeholder="22" required>
         </div>
       </div>
 
       <div class="mb-3">
         <label for="pix" class="form-label">Chave Pix</label>
-        <input type="text" class="form-control" id="pix" placeholder="Digite sua chave" maxlength="50" required>
+        <input type="text" class="form-control" id="pix"
+          placeholder="Digite sua chave Pix" maxlength="50" required>
       </div>
 
-      <div class="mb-3">
-        <label for="descricao" class="form-label">Fale um pouco sobre sua ONG</label>
-        <textarea class="form-control" id="descricao" rows="4" placeholder="Descrição da ONG, atuação, etc."
+      <div class="mb-4">
+        <label for="descricao" class="form-label">
+          Fale um pouco sobre sua ONG
+        </label>
+
+        <textarea class="form-control" id="descricao" rows="4"
+          placeholder="Conte sobre sua ONG, suas atividades e causas..."
           required></textarea>
       </div>
 
-      <button type="submit" class="btn " style="background-color: rgb(108, 47, 169); color: white">Enviar para
-        análise</button>
+      <button type="submit" class="btn-enviar">
+        Enviar para análise
+        <i class="fas fa-arrow-right"></i>
+      </button>
+
     </form>
 
     <div id="mensagemConfirmacao"></div>
-  </div>
 
+    <p class="cadastro-seguranca">
+      <i class="fas fa-shield-alt"></i>
+      Seus dados serão utilizados para análise do cadastro.
+    </p>
+
+  </div>
+</main>
   <!-- Rodapé -->
   <footer>
     <p>&copy; <span id="anoAtual"></span> ConectaCausa - Todos os direitos reservados.</p>
@@ -181,7 +220,82 @@
 
   <script>
     document.getElementById('anoAtual').textContent = new Date().getFullYear();
-  </script>
+document.getElementById("anoAtual").textContent =
+    new Date().getFullYear();
+
+document.getElementById("formCadastro").addEventListener(
+    "submit",
+    async function(event) {
+
+        event.preventDefault();
+
+        let usuario;
+
+        try {
+            usuario = JSON.parse(
+                sessionStorage.getItem("usuarioLogado")
+            );
+        } catch (erro) {
+            usuario = null;
+        }
+
+        if (!usuario || !usuario.id) {
+            alert(
+                "Não foi possível identificar seu usuário. Faça login novamente."
+            );
+            return;
+        }
+
+        const dadosONG = {
+            usuario_id: usuario.id,
+            nome: document.getElementById("nome").value.trim(),
+            cnpj: document.getElementById("cnpj").value.trim(),
+            email: document.getElementById("email").value.trim(),
+            telefone: document.getElementById("telefone").value.trim(),
+            cep: document.getElementById("cep").value.trim(),
+            cidade: document.getElementById("cidade").value.trim(),
+            endereco: document.getElementById("endereco").value.trim(),
+            numero: document.getElementById("numero").value,
+            pix: document.getElementById("pix").value.trim(),
+            descricao: document.getElementById("descricao").value.trim()
+        };
+
+        try {
+            const resposta = await fetch(
+                "http://localhost:3650/ongs",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(dadosONG)
+                }
+            );
+
+            const resultado = await resposta.json();
+
+            if (!resposta.ok || resultado.message !== "Success") {
+                alert(
+                    "Não foi possível cadastrar a ONG: " +
+                    (resultado.data || "Verifique os dados.")
+                );
+                return;
+            }
+
+            alert("ONG cadastrada com sucesso!");
+
+            document.getElementById("formCadastro").reset();
+
+        } catch (erro) {
+            console.error("Erro ao cadastrar ONG:", erro);
+
+            alert(
+                "Não foi possível conectar à API. Confira se o servidor está funcionando."
+            );
+        }
+    }
+);
+</script>
 
   <script src="./script/fotoPerfil.js"></script>
 </body>

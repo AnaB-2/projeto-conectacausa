@@ -1,4 +1,7 @@
+
 import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
+
 import {
   Pressable,
   ScrollView,
@@ -13,7 +16,12 @@ export default function CampaignDetails() {
   return (
     <View style={s.c}>
       <ScrollView>
-        <View style={s.hero}>
+        <LinearGradient
+          colors={["#8B5BCB", "#5E2D98"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={s.hero}
+        >
           <Text style={s.back} onPress={() => router.back()}>
             ‹
           </Text>
@@ -21,11 +29,11 @@ export default function CampaignDetails() {
           <Text style={s.heroEmoji}>🐾</Text>
 
           <Text style={s.heroTitle}>
-            Doe alimentos e transforme vidas
+            Ajude animais.
           </Text>
 
           <Text style={s.tag}>PROTEÇÃO ANIMAL</Text>
-        </View>
+        </LinearGradient>
 
         <View style={s.body}>
           <Text style={s.title}>Sobre a campanha</Text>
@@ -69,7 +77,6 @@ const s = StyleSheet.create({
   },
 
   hero: {
-    backgroundColor: "#743BB5",
     padding: 20,
     paddingTop: 50,
     paddingBottom: 28,

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Alert,
@@ -8,6 +9,7 @@ import {
   View,
 } from "react-native";
 import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Donation() {
   const router = useRouter();
@@ -15,13 +17,18 @@ export default function Donation() {
 
   return (
     <View style={s.c}>
-      <View style={s.top}>
+      <LinearGradient
+        colors={["#8B5BCB", "#5E2D98"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={s.top}
+      >
         <Text style={s.back} onPress={() => router.back()}>
           ‹
         </Text>
 
         <Text style={s.topTitle}>Fazer uma doação</Text>
-      </View>
+      </LinearGradient>
 
       <View style={s.body}>
         <Text style={s.title}>Escolha o valor</Text>
@@ -83,7 +90,6 @@ const s = StyleSheet.create({
   },
 
   top: {
-    backgroundColor: "#743BB5",
     paddingTop: 52,
     paddingBottom: 20,
     paddingHorizontal: 20,

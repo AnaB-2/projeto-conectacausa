@@ -1,5 +1,6 @@
 
 import { useRouter } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 
 import {
   Pressable,
@@ -16,7 +17,12 @@ export default function Statistics() {
   return (
     <View style={s.screen}>
       {/* Cabeçalho */}
-      <View style={s.top}>
+      <LinearGradient
+        colors={["#8B5BCB", "#5E2D98"]}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={s.top}
+      >
         <Text
           onPress={() => router.back()}
           style={s.back}
@@ -27,7 +33,7 @@ export default function Statistics() {
         <Text style={s.title}>
           Estatísticas
         </Text>
-      </View>
+      </LinearGradient>
 
       {/* Conteúdo da página */}
       <ScrollView contentContainerStyle={s.body}>
@@ -121,7 +127,6 @@ const s = StyleSheet.create({
 
   // Cabeçalho
   top: {
-    backgroundColor: "#743BB5",
     paddingTop: 54,
     paddingBottom: 20,
     paddingHorizontal: 20,
