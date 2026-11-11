@@ -1,71 +1,167 @@
 const { db } = require("../databases/DatabaseContext.js");
-const { valuesParams, extrair_dados,  gerar_sqlFields ,
-   gerar_sqlParams, gerar_sqlSets } = require( "../utils/sqlcomandos.js")
-const tableName = 'ongs';
 
-// selecionar todos os usuarios 
-async function Get(){
-  const sqlText = `SELECT * FROM ${tableName} ORDER BY id`;
-  const [result, fields] = await db.execute(sqlText); 
-  return {"message": "Success", "data":result } 
+const tableName = "ongs";
+
+// Campos recebidos do formulário e seus nomes no MySQL
+const campos = {
+    nome: "nome_ong",
+    cnpj: "cnpj",
+    email: "email",
+    telefone: "telefone",
+    cep: "cep",
+    cidade: "cidade",
+    endereco: "endereco",
+    numero: "numero",
+    pix: "pix",
+    descricao: "descricao"
+};
+
+async function Get() {
+    const sql = `SELECT * FROM ${tableName} ORDER BY id`;
+    const [result] = await db.execute(sql);
+
+    return {
+        message: "Success",
+        data: result
+    };
 }
 
-// selecionar um registro pelo id
-async function GetById( id ){
-  // 
-  const sqlText = `SELECT * FROM  ${tableName} WHERE id = ? ORDER BY id`;
-  const [result, fields] = await db.execute(sqlText,[id]); 
-  return {"message": "Success", "data":result } 
+async function GetById(id) {
+    const sql = `SELECT * FROM ${tableName} WHERE id = ?`;
+    const [result] = await db.execute(sql, [id]);
+
+    if (result.length === 0) {
+        return {
+            message: "Error",
+            data: "ONG não encontrada."
+        };
+    }
+
+    return {
+        message: "Success",
+        data: result[0]
+    };
 }
 
-async function Post(payload){
-  // instrução sql para envio ao banco
-  if ( !payload)   return {"message": "Error", "data": "Dados não informado !" }
-  extrair_dados(payload);
-  const local_fields = gerar_sqlFields();
-  const local_params = gerar_sqlParams() ;  
-  const valuessql = valuesParams();
-  const sqlText = `INSERT INTO  ${tableName} ( ${local_fields} ) VALUES ( ${local_params} )`;  
-  // executa a consulta no banco de dados
-  const [result, fields] = await db.execute( sqlText, valuessql );
-  // retorna para a proxima camada os dados dos banco
-  return {"message": "Sucess", "data": result }
- 
+async function Post(payload) {
+    if (!payload || typeof payload !== "object") {
+        return {
+            message: "Error",
+            data: "Dados não informados."
+        };
+    }
+
+    const usuario_id = Number(payload.usuario_id);
+
+    if (!Number.isInteger(usuario_id) || usuario_id <= 0) {
+        return {
+            message: "Error",
+            data: "Usuário não identificado. Faça login novamente."
+        };
+    }
+
+    const camposObrigatorios = Object.keys(campos);
+
+    for (const campo of camposObrigatorios) {
+        if (
+            payload[campo] === undefined ||
+            payload[campo] === null ||
+            String(payload[campo]).trim() === ""
+        ) {
+            return {
+                message: "Error",
+                data: `O campo ${campo} é obrigatório.`
+            };
+        }
+    }
+
+    const colunas = ["usuario_id"];
+    const valores = [usuario_id];
+
+    for (const [campoFormulario, campoBanco] of Object.entries(campos)) {
+        colunas.push(campoBanco);
+        valores.push(String(payload[campoFormulario]).trim());
+    }
+
+    const placeholders = colunas.map(() => "?").join(", ");
+
+    const sql = `
+        INSERT INTO ${tableName}
+        (${colunas.join(", ")})
+        VALUES (${placeholders})
+    `;
+
+    const [result] = await db.execute(sql, valores);
+
+    return {
+        message: "Success",
+        data: {
+            id: result.insertId
+        }
+    };
 }
 
-async function Put(payload, id){
-  // instrução sql para envio ao banco
-  if ( !payload)   return {"message": "Error", "data": "Dados não informado !" }
-  extrair_dados(payload);
-  const local_Sets = gerar_sqlSets(); 
-  const local_values = valuesParams() ;
-  const sqlText = `UPDATE  ${tableName} SET ${local_Sets} WHERE id = ?`;
-  // vetor com os valores para envio ao banco, manter os dados na order das coluna
-  // inclui no array/vetor o valor do id na ultima posição
-  local_values.push( id );
-  // executa a consulta no banco de dados
-  
-  const [result, fields] = await db.execute( sqlText, local_values );
-  // retorna para a proxima camada os dados dos banco
-  return {"message": "Sucess", "data": result }
- 
+async function Put(payload, id) {
+    if (!payload || typeof payload !== "object") {
+        return {
+            message: "Error",
+            data: "Dados não informados."
+        };
+    }
+
+    const camposRecebidos = Object.keys(campos)
+        .filter(campo => payload[campo] !== undefined);
+
+    if (camposRecebidos.length === 0) {
+        return {
+            message: "Error",
+            data: "Nenhum campo válido foi informado."
+        };
+    }
+
+    const sets = camposRecebidos.map(
+        campo => `${campos[campo]} = ?`
+    );
+
+    const valores = camposRecebidos.map(
+        campo => payload[campo]
+    );
+
+    valores.push(id);
+
+    const sql = `
+        UPDATE ${tableName}
+        SET ${sets.join(", ")}
+        WHERE id = ?
+    `;
+
+    const [result] = await db.execute(sql, valores);
+
+    return {
+        message: "Success",
+        data: result
+    };
 }
 
-// selecionar um registro pelo id
-async function Delete( id ){
-  // instrucao sql para excluir um registro
-  const sqlText = `DELETE FROM  ${tableName} WHERE id = ?`;
-  const [result, fields] = await db.execute(sqlText,[id]); 
-  return {"message": "Success", "data":result } 
+async function Delete(id) {
+    const sql = `DELETE FROM ${tableName} WHERE id = ?`;
+    const [result] = await db.execute(sql, [id]);
+
+    return {
+        message: "Success",
+        data: result
+    };
 }
 
-function EndPointName(){
-  return tableName;
+function EndPointName() {
+    return tableName;
 }
 
-async function Login(email) {
-  const [result, fields] = await db.execute({email});
-  return result.length > 0 ? result [0]: null;
-}
-
-module.exports = { Get, GetById, Post, Put, Delete, EndPointName, Login}
+module.exports = {
+    Get,
+    GetById,
+    Post,
+    Put,
+    Delete,
+    EndPointName
+};

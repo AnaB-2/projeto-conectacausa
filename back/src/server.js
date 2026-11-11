@@ -38,6 +38,12 @@ app.post("/upload", uploads.single("avatar"), (req, res) => {
 
 app.use(routes);
 
+// Disponibiliza as páginas e os arquivos estáticos do site Web na mesma porta da API.
+const webPath = path.resolve(__dirname, "../../web");
+app.use(express.static(webPath, {
+    extensions: ["html"]
+}));
+
 async function startServer() {
     try {
         console.log(`iniciando banco de dados: ${process.env.DB_TYPE}`);
