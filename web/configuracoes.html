@@ -1,29 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Configurações - ConectaCausa</title>
-
     <link rel="stylesheet" href="./css/inicio.css">
     <link rel="stylesheet" href="./css/configuracoes.css">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./css/padrao-cabecalho.css">
 </head>
-
 <body>
-
     <button id="botao-tema" title="Alternar tema">
         🌙
     </button>
-
     <header class="cc-cabecalho">
   <div class="grupoLogo">
     <a href="./segundatela.html"><img src="./img/logo_novaa.semfundo.png" alt="Logo ConectaCausa"></a>
@@ -64,25 +53,18 @@
     <div class="ret1"></div><div class="ret2"></div><div class="ret3"></div>
   </button>
 </header>
-
     <main class="config-page">
-
         <section class="config-card">
-
             <h1>
                 <i class="fa-solid fa-gear"></i>
                 Configurações
             </h1>
-
             <p class="subtitulo">
                 Gerencie seus dados e preferências.
             </p>
-
             <!-- Dados pessoais -->
             <div class="config-secao">
-
                 <h2>Dados pessoais</h2>
-
                 <label>
                     Nome
                     <input id="nome" type="text">
@@ -141,68 +123,11 @@
             <a class="voltar" href="./perfil.html">
                 ← Voltar para meu perfil
             </a>
-
         </section>
-
     </main>
-
-    <script>
-        const usuario = JSON.parse(
-            sessionStorage.getItem('usuarioLogado')
-        );
-
-        if (!usuario) {
-            location.href = './entrar.html';
-        } else {
-            nome.value = usuario.nome || '';
-            email.value = usuario.email || '';
-            telefone.value = usuario.telefone || '';
-        }
-
-        salvar.onclick = () => {
-            const atual = {
-                ...usuario,
-                nome: nome.value,
-                email: email.value,
-                telefone: telefone.value
-            };
-
-            sessionStorage.setItem(
-                'usuarioLogado',
-                JSON.stringify(atual)
-            );
-
-            alert('Alterações salvas!');
-        };
-
-        tema.onchange = () => {
-            document.body.classList.toggle(
-                'tema-escuro',
-                tema.checked
-            );
-
-            localStorage.setItem(
-                'temaEscuro',
-                tema.checked
-            );
-        };
-
-        tema.checked = localStorage.getItem('temaEscuro') === 'true';
-
-        document.body.classList.toggle(
-            'tema-escuro',
-            tema.checked
-        );
-
-        sair.onclick = () => {
-            sessionStorage.clear();
-            location.href = './entrar.html';
-        };
-    </script>
-
     <script src="./script/scripts.js"></script>
-
-  <script src="./script/fotoPerfil.js"></script>
+    <script src="./script/configuracoes.js"></script>
+    <script src="./script/fotoPerfil.js"></script>
 </body>
 
 </html>

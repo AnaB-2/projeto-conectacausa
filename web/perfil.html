@@ -1,25 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Meu Perfil - ConectaCausa</title>
-
     <link rel="stylesheet" href="./css/inicio.css">
     <link rel="stylesheet" href="./css/perfil.css">
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="./css/padrao-cabecalho.css">
 </head>
-
 <body>
-
     <header class="cc-cabecalho">
   <div class="grupoLogo">
     <a href="./segundatela.html"><img src="./img/logo_novaa.semfundo.png" alt="Logo ConectaCausa"></a>
@@ -60,12 +50,9 @@
     <div class="ret1"></div><div class="ret2"></div><div class="ret3"></div>
   </button>
 </header>
-
     <main class="perfil-page">
-
         <!-- Cabeçalho do perfil -->
         <section class="perfil-cabecalho">
-
             <div class="avatar-area">
                 <button type="button" class="avatar avatar-botao" id="escolherFoto" aria-label="Escolher foto de perfil" title="Escolher foto de perfil">
                     <img id="fotoPerfil" src="./img/user.png" alt="Foto de perfil">
@@ -77,9 +64,7 @@
 
             <div>
                 <span class="etiqueta">MINHA CONTA</span>
-
                 <h1 id="nomeTitulo">Meu Perfil</h1>
-
                 <p>
                     Veja suas informações e acompanhe sua participação
                     no ConectaCausa.
@@ -95,65 +80,50 @@
 
         <!-- Dados pessoais -->
         <section class="dados-card">
-
             <h2>
                 <i class="fa-solid fa-id-card"></i>
                 Meus dados
             </h2>
-
             <div class="dados-grid">
-
                 <div class="dado">
                     <i class="fa-solid fa-user"></i>
-
                     <div>
                         <small>Nome</small>
                         <strong id="nome">-</strong>
                     </div>
                 </div>
-
                 <div class="dado">
                     <i class="fa-solid fa-envelope"></i>
-
                     <div>
                         <small>E-mail</small>
                         <strong id="email">-</strong>
                     </div>
                 </div>
-
                 <div class="dado">
                     <i class="fa-solid fa-phone"></i>
-
                     <div>
                         <small>Telefone</small>
                         <strong id="telefone">-</strong>
                     </div>
                 </div>
-
             </div>
-
         </section>
 
         <!-- Atividade do usuário -->
         <section class="atividade-card">
-
             <div class="titulo-secao">
-
                 <div>
                     <h2>
                         <i class="fa-solid fa-heart"></i>
                         Minha atividade
                     </h2>
-
                     <p>
                         Seu histórico de participação em causas sociais.
                     </p>
                 </div>
-
             </div>
 
             <div class="atividade-grid">
-
                 <div class="atividade">
                     <i class="fa-solid fa-hand-holding-heart"></i>
                     <strong id="totalDoacoes">0</strong>
@@ -176,56 +146,42 @@
 
         </section>
 
-        <!-- Atalhos de navegação -->
         <section class="atalhos-card">
-
             <h2>Atalhos</h2>
-
             <div class="atalhos-grid">
-
                 <a href="./doar.html">
                     <i class="fa-solid fa-hand-holding-dollar"></i>
-
                     <div>
                         <strong>Quero doar</strong>
                         <span>Ajude uma causa</span>
                     </div>
-
                     <i class="fa-solid fa-chevron-right seta"></i>
                 </a>
 
                 <a href="./categ.html">
                     <i class="fa-solid fa-building-ngo"></i>
-
                     <div>
                         <strong>Encontrar ONGs</strong>
                         <span>Conheça projetos e categorias</span>
                     </div>
-
                     <i class="fa-solid fa-chevron-right seta"></i>
                 </a>
 
                 <a href="./configuracoes.html">
                     <i class="fa-solid fa-gear"></i>
-
                     <div>
                         <strong>Configurações</strong>
                         <span>Gerencie sua conta</span>
                     </div>
-
                     <i class="fa-solid fa-chevron-right seta"></i>
                 </a>
-
             </div>
-
         </section>
 
-        <!-- Botão para sair da conta -->
         <button id="btnSair" class="sair">
             <i class="fa-solid fa-right-from-bracket"></i>
             Sair da conta
         </button>
-
     </main>
 
     <script>

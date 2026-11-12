@@ -1,303 +1,285 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conecta Causa</title>
-  <link rel="stylesheet" href="./css/cadastro.css">
-  <link rel="stylesheet" href="../zerofome-main/css/my-slider.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNFYLZJ8TJ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-QNFYLZJ8TJ');
-  </script>
-  <link rel="stylesheet" href="./css/padrao-cabecalho.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta Causa</title>
+    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="../zerofome-main/css/my-slider.css">
+    <link rel="stylesheet" href="./css/padrao-cabecalho.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+        crossorigin="anonymous">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNFYLZJ8TJ"></script>
+    <script src="./script/googleAnalytics.js" defer></script>
 </head>
 <body>
-  <button id="botao-tema" title="Alternar tema">🌙</button>
-  <div vw class="enabled">
-    <div vw-access-button class="active"></div>
-    <div vw-plugin-wrapper>
-      <div class="vw-plugin-top-wrapper"></div>
+    <!-- Botão de tema -->
+    <button id="botao-tema" title="Alternar tema">🌙</button>
+    <!-- VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-  </div>
+    <!-- Cabeçalho -->
+    <header class="cc-cabecalho">
 
-  <header class="cc-cabecalho">
-  <div class="grupoLogo">
-    <a href="./segundatela.html"><img src="./img/logo_novaa.semfundo.png" alt="Logo ConectaCausa"></a>
-  </div>
-  <div class="links-header">
-    <a href="./segundatela.html">Início</a>
-    <a href="./quemsomos.html">Quem somos</a>
-    <a href="./doar.html">Doações</a>
-    <div class="menu-ongs">
-      <a href="#">ONGs <i class="fas fa-chevron-down" aria-hidden="true"></i></a>
-      <div class="submenu-ongs">
-        <a href="./categ.html">Categorias</a>
-        <a href="./cadastro.html">Cadastro de ONGs</a>
-      </div>
-    </div>
-  </div>
-  <div class="usuario usuario-logado">
-        <a class="atalho-perfil" href="./perfil.html" aria-label="Abrir meu perfil">
-          <img id="fotoMenuUsuario" src="./img/usuario-semfundo.png" alt="Foto de perfil">
-          <span id="nomeMenuUsuario">Meu perfil</span>
-        </a>
-    </div>
-  <nav id="menuCabecalho" class="menuFechado" aria-label="Menu principal">
-    <div class="topo">
-      <h3>Menu</h3>
-      <button type="button" class="link btnFechar" aria-label="Fechar menu">×</button>
-    </div>
-    <a href="./segundatela.html">Início</a>
-    <a href="./quemsomos.html">Quem somos</a>
-    <a href="./doar.html">Quero doar dinheiro</a>
-    <a href="./categ.html">Categorias</a>
-    <a href="./cadastro.html">Quero ser uma ONG</a>
-    <a href="./perfil.html">Meu perfil</a>
-    <a href="./entrar.html">Entrar</a>
-    <p class="base"><span class="ano"></span> ConectaCausa. Todos os direitos reservados.</p>
-  </nav>
-  <button type="button" class="botaoMenu" aria-label="Abrir menu" aria-controls="menuCabecalho">
-    <div class="ret1"></div><div class="ret2"></div><div class="ret3"></div>
-  </button>
-</header>
-<div class="gtranslate_wrapper"></div>
-<script>window.gtranslateSettings = { "default_language": "pt", "languages": ["pt", "en"], "wrapper_selector": ".gtranslate_wrapper", "alt_flags": { "en": "usa", "pt": "brazil" } }</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-  <br>  
-<main class="area-cadastro">
-  <div class="cadastro-card">
-
-    <div class="cadastro-titulo">
-      <div class="icone-cadastro">
-        <i class="fas fa-hand-holding-heart"></i>
-      </div>
-
-      <span>FAÇA PARTE DESSA CAUSA</span>
-      <h2>Cadastrar ONG</h2>
-      <p>
-        Cadastre sua organização e conecte-se a pessoas
-        que desejam fazer a diferença!
-      </p>
-    </div>
-
-    <form id="formCadastro">
-
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="nome" class="form-label">Nome da ONG</label>
-          <input type="text" class="form-control" id="nome"
-            placeholder="Ex: Alimento Solidário" required>
+        <div class="grupoLogo">
+            <a href="./segundatela.html">
+                <img src="./img/logo_novaa.semfundo.png" alt="Logo ConectaCausa">
+            </a>
         </div>
-
-        <div class="col-md-6">
-          <label for="cnpj" class="form-label">CNPJ</label>
-          <input type="text" class="form-control" id="cnpj"
-            placeholder="00.000.000/0000-00" maxlength="18" required>
+        <div class="links-header">
+            <a href="./segundatela.html">Início</a>
+            <a href="./quemsomos.html">Quem somos</a>
+            <a href="./doar.html">Doações</a>
+            <div class="menu-ongs">
+                <a href="#">
+                    ONGs
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <div class="submenu-ongs">
+                    <a href="./categ.html">Categorias</a>
+                    <a href="./cadastro.html">Cadastro de ONGs</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-md-6">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email"
-            placeholder="exemplo@gmail.com" required>
+        <!-- Usuário logado -->
+        <div class="usuario usuario-logado">
+            <a class="atalho-perfil" href="./perfil.html" aria-label="Abrir meu perfil">
+                <img id="fotoMenuUsuario"
+                    src="./img/usuario-semfundo.png"
+                    alt="Foto de perfil">
+                <span id="nomeMenuUsuario">Meu perfil</span>
+            </a>
         </div>
+        <!-- Menu lateral -->
+        <nav id="menuCabecalho" class="menuFechado" aria-label="Menu principal">
+            <div class="topo">
+                <h3>Menu</h3>
+                <button type="button" class="link btnFechar" aria-label="Fechar menu">
+                    ×
+                </button>
+            </div>
+            <a href="./segundatela.html">Início</a>
+            <a href="./quemsomos.html">Quem somos</a>
+            <a href="./doar.html">Quero doar dinheiro</a>
+            <a href="./categ.html">Categorias</a>
+            <a href="./cadastro.html">Quero ser uma ONG</a>
+            <a href="./perfil.html">Meu perfil</a>
+            <a href="./entrar.html">Entrar</a>
+            <p class="base">
+                <span class="ano"></span>
+                ConectaCausa. Todos os direitos reservados.
+            </p>
+        </nav>
 
-        <div class="col-md-6">
-          <label for="telefone" class="form-label">Telefone</label>
-          <input type="text" class="form-control" id="telefone"
-            placeholder="(00) 00000-0000" maxlength="15" required>
+        <!-- Botão menu -->
+        <button type="button" class="botaoMenu" aria-label="Abrir menu" aria-controls="menuCabecalho">
+            <div class="ret1"></div>
+            <div class="ret2"></div>
+            <div class="ret3"></div>
+        </button>
+    </header>
+    <!-- Tradutor -->
+    <div class="gtranslate_wrapper"></div>
+    <!-- Cadastro -->
+    <main class="area-cadastro">
+        <div class="cadastro-card">
+            <div class="cadastro-titulo">
+                <div class="icone-cadastro">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <span>FAÇA PARTE DESSA CAUSA</span>
+                <h2>Cadastrar ONG</h2>
+                <p>
+                    Cadastre sua organização e conecte-se a pessoas
+                    que desejam fazer a diferença!
+                </p>
+            </div>
+
+            <!-- Formulário -->
+            <form id="formCadastro">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="nome" class="form-label">
+                            Nome da ONG
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="nome"
+                            placeholder="Ex: Alimento Solidário"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cnpj" class="form-label">
+                            CNPJ
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="cnpj"
+                            placeholder="00.000.000/0000-00"
+                            maxlength="18"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">
+                            Email
+                        </label>
+                        <input type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="exemplo@gmail.com"
+                            required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefone" class="form-label">
+                            Telefone
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="telefone"
+                            placeholder="(00) 00000-0000"
+                            maxlength="15"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="cep" class="form-label">
+                            CEP
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="cep"
+                            placeholder="00000-000"
+                            maxlength="9"
+                            required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="cidade" class="form-label">
+                            Cidade
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="cidade"
+                            placeholder="Cidade Exemplo"
+                            maxlength="200"
+                            required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="endereco" class="form-label">
+                            Endereço
+                        </label>
+                        <input type="text"
+                            class="form-control"
+                            id="endereco"
+                            placeholder="Rua Exemplo"
+                            required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-3">
+                        <label for="numero" class="form-label">
+                            Número
+                        </label>
+                        <input type="number"
+                            class="form-control"
+                            id="numero"
+                            placeholder="22"
+                            required>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="pix" class="form-label">
+                        Chave Pix
+                    </label>
+                    <input type="text"
+                        class="form-control"
+                        id="pix"
+                        placeholder="Digite sua chave Pix"
+                        maxlength="50"
+                        required>
+                </div>
+                <div class="mb-4">
+                    <label for="descricao" class="form-label">
+                        Fale um pouco sobre sua ONG
+                    </label>
+                    <textarea class="form-control"
+                        id="descricao"
+                        rows="4"
+                        placeholder="Conte sobre sua ONG, suas atividades e causas..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn-enviar">Enviar para análise<i class="fas fa-arrow-right"></i></button>
+            </form>
+            <div id="mensagemConfirmacao"></div>
+            <p class="cadastro-seguranca"><i class="fas fa-shield-alt"></i> Seus dados serão utilizados para análise do cadastro.</p>
         </div>
-      </div>
+    </main>
+  
+    <footer>
+        <p>
+            &copy;
+            <span id="anoAtual"></span>
+            ConectaCausa - Todos os direitos reservados.
+        </p>
+        <p>
+            Contato:
+            <a href="mailto:contato@conectacausa.org">
+                contato@conectacausa.org
+            </a>
+        </p>
+        <p>
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">WhatsApp</a> |
+            <a href="./loginAdm.html">admin</a>
 
-      <div class="row mb-3">
-        <div class="col-md-3">
-          <label for="cep" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="cep"
-            placeholder="00000-000" maxlength="9" required>
-        </div>
+            <a href="https://fatectq.cps.sp.gov.br/">
+                <img src="./img/logo fatec.jpg" alt="Fatec">
+            </a>
+        </p>
+    </footer>
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 
-        <div class="col-md-5">
-          <label for="cidade" class="form-label">Cidade</label>
-          <input type="text" class="form-control" id="cidade"
-            placeholder="Cidade Exemplo" maxlength="200" required>
-        </div>
+    <!-- Scripts do projeto -->
+    <script src="./script/scripts.js"></script>
+    <script src="./script/cadastro.js"></script>
+    <script src="./script/fotoPerfil.js"></script>
 
-        <div class="col-md-4">
-          <label for="endereco" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="endereco"
-            placeholder="Rua Exemplo" required>
-        </div>
-      </div>
-
-      <div class="row mb-3">
-        <div class="col-md-3">
-          <label for="numero" class="form-label">Número</label>
-          <input type="number" class="form-control" id="numero"
-            placeholder="22" required>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label for="pix" class="form-label">Chave Pix</label>
-        <input type="text" class="form-control" id="pix"
-          placeholder="Digite sua chave Pix" maxlength="50" required>
-      </div>
-
-      <div class="mb-4">
-        <label for="descricao" class="form-label">
-          Fale um pouco sobre sua ONG
-        </label>
-
-        <textarea class="form-control" id="descricao" rows="4"
-          placeholder="Conte sobre sua ONG, suas atividades e causas..."
-          required></textarea>
-      </div>
-
-      <button type="submit" class="btn-enviar">
-        Enviar para análise
-        <i class="fas fa-arrow-right"></i>
-      </button>
-
-    </form>
-
-    <div id="mensagemConfirmacao"></div>
-
-    <p class="cadastro-seguranca">
-      <i class="fas fa-shield-alt"></i>
-      Seus dados serão utilizados para análise do cadastro.
-    </p>
-
-  </div>
-</main>
-  <!-- Rodapé -->
-  <footer>
-    <p>&copy; <span id="anoAtual"></span> ConectaCausa - Todos os direitos reservados.</p>
-    <p>Contato: <a href="mailto:contato@zerofome.org">contato@conectacausa.org</a></p>
-    <p>
-      <a href="#">Facebook</a> |
-      <a href="#">Instagram</a> |
-      <a href="#">WhatsApp</a> |
-      <a href="./loginAdm.html">admin</a>
-      <a href="https://fatectq.cps.sp.gov.br/"><img src="./img/logo fatec.jpg" alt="fatectq"></a>
-    </p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
-  <script src="./script/scripts.js"></script>
-  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
-
-  <script>
-    // ======== SCRIPT DO BOTÃO DE TEMA ========
-    const botaoTema = document.getElementById("botao-tema");
-    const body = document.body;
-
-    // Verifica se há preferência salva
-    if (localStorage.getItem("tema") === "escuro") {
-      body.classList.add("tema-escuro");
-      botaoTema.textContent = "☀️";
-    }
-
-    botaoTema.addEventListener("click", () => {
-      body.classList.toggle("tema-escuro");
-      const temaAtivo = body.classList.contains("tema-escuro") ? "escuro" : "claro";
-      localStorage.setItem("tema", temaAtivo);
-      botaoTema.textContent = temaAtivo === "escuro" ? "☀️" : "🌙";
-    });
-  </script>
-
-  <script>
-    document.getElementById('anoAtual').textContent = new Date().getFullYear();
-document.getElementById("anoAtual").textContent =
-    new Date().getFullYear();
-
-document.getElementById("formCadastro").addEventListener(
-    "submit",
-    async function(event) {
-
-        event.preventDefault();
-
-        let usuario;
-
-        try {
-            usuario = JSON.parse(
-                sessionStorage.getItem("usuarioLogado")
-            );
-        } catch (erro) {
-            usuario = null;
-        }
-
-        if (!usuario || !usuario.id) {
-            alert(
-                "Não foi possível identificar seu usuário. Faça login novamente."
-            );
-            return;
-        }
-
-        const dadosONG = {
-            usuario_id: usuario.id,
-            nome: document.getElementById("nome").value.trim(),
-            cnpj: document.getElementById("cnpj").value.trim(),
-            email: document.getElementById("email").value.trim(),
-            telefone: document.getElementById("telefone").value.trim(),
-            cep: document.getElementById("cep").value.trim(),
-            cidade: document.getElementById("cidade").value.trim(),
-            endereco: document.getElementById("endereco").value.trim(),
-            numero: document.getElementById("numero").value,
-            pix: document.getElementById("pix").value.trim(),
-            descricao: document.getElementById("descricao").value.trim()
-        };
-
-        try {
-            const resposta = await fetch(
-                "http://localhost:3650/ongs",
-                {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(dadosONG)
-                }
-            );
-
-            const resultado = await resposta.json();
-
-            if (!resposta.ok || resultado.message !== "Success") {
-                alert(
-                    "Não foi possível cadastrar a ONG: " +
-                    (resultado.data || "Verifique os dados.")
-                );
-                return;
+    <!-- Tradutor -->
+    <script>
+        window.gtranslateSettings = {
+            "default_language": "pt",
+            "languages": ["pt", "en"],
+            "wrapper_selector": ".gtranslate_wrapper",
+            "alt_flags": {
+                "en": "usa",
+                "pt": "brazil"
             }
+        };
+    </script>
 
-            alert("ONG cadastrada com sucesso!");
+    <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
 
-            document.getElementById("formCadastro").reset();
+    <!-- VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
 
-        } catch (erro) {
-            console.error("Erro ao cadastrar ONG:", erro);
-
-            alert(
-                "Não foi possível conectar à API. Confira se o servidor está funcionando."
-            );
-        }
-    }
-);
-</script>
-
-  <script src="./script/fotoPerfil.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
-
 </html>

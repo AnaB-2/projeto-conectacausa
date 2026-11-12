@@ -47,20 +47,17 @@
         </div>
       </div>
     </div>
-
     <div class="usuario usuario-logado">
       <a class="atalho-perfil" href="./perfil.html" aria-label="Abrir meu perfil">
         <img id="fotoMenuUsuario" src="./img/usuario-semfundo.png" alt="Foto de perfil">
         <span id="nomeMenuUsuario">Meu perfil</span>
       </a>
     </div>
-
     <nav id="menuCabecalho" class="menuFechado" aria-label="Menu principal">
       <div class="topo">
         <h3>Menu</h3>
         <button type="button" class="link btnFechar" aria-label="Fechar menu">×</button>
       </div>
-
       <a href="./segundatela.html">Início</a>
       <a href="./quemsomos.html">Quem somos</a>
       <a href="./doar.html">Quero doar dinheiro</a>
@@ -68,12 +65,10 @@
       <a href="./cadastro.html">Quero ser uma ONG</a>
       <a href="./perfil.html">Meu perfil</a>
       <a href="./entrar.html">Entrar</a>
-
       <p class="base">
         <span class="ano"></span> ConectaCausa. Todos os direitos reservados.
       </p>
     </nav>
-
     <button type="button" class="botaoMenu"
       aria-label="Abrir menu" aria-controls="menuCabecalho">
       <div class="ret1"></div>
@@ -83,7 +78,6 @@
   </header>
 
   <div class="gtranslate_wrapper"></div>
-
   <script>
     window.gtranslateSettings = {
       "default_language": "pt",
@@ -94,31 +88,20 @@
   </script>
 
   <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-
-  <!-- CONTEÚDO PRINCIPAL -->
-
   <main>
-
     <section class="area-doacao" id="formulario-doacao">
-
       <div class="titulo-secao">
         <span>FAÇA PARTE DESSA MUDANÇA</span>
         <h2>Faça sua doação</h2>
         <p>Escolha como deseja contribuir e faça a diferença!</p>
       </div>
-
       <div class="doacao-card">
-
         <form id="formDoacao">
-
-          <!-- VALOR -->
-
           <div class="campo-grupo">
             <label class="titulo-campo">
               <i class="fas fa-wallet"></i>
               Quanto você deseja doar?
             </label>
-
             <div class="valores-doacao">
               <button type="button" class="valor-btn" data-valor="10">
                 R$ 10
@@ -182,14 +165,11 @@
             </div>
           </div>
 
-          <!-- ONG -->
-
           <div class="campo-grupo">
             <label for="seleOng" class="titulo-campo">
               <i class="fas fa-hands-helping"></i>
               Escolha a ONG que deseja ajudar
             </label>
-
             <select id="seleOng" required>
               <option value="" selected disabled>Selecione uma ONG</option>
               <option value="Alimento Solidário">Alimento Solidário</option>
@@ -201,42 +181,32 @@
             </select>
           </div>
 
-          <!-- PAGAMENTO -->
-
           <div class="campo-grupo">
             <label class="titulo-campo">
               <i class="fas fa-credit-card"></i>
               Como deseja pagar?
             </label>
-
             <div class="opcoes-lado">
-
               <label class="opcao-card pagamento-card">
                 <input type="radio" name="pagamento"
                   id="pagPix" value="Pix" required>
-
                 <span class="opcao-conteudo">
                   <i class="fa-brands fa-pix"></i>
                   <strong>Pix</strong>
                   <small>Pagamento instantâneo</small>
                 </span>
               </label>
-
               <label class="opcao-card pagamento-card">
                 <input type="radio" name="pagamento"
                   id="pagCartao" value="Cartão">
-
                 <span class="opcao-conteudo">
                   <i class="fas fa-credit-card"></i>
                   <strong>Cartão</strong>
                   <small>Crédito ou débito</small>
                 </span>
               </label>
-
             </div>
           </div>
-
-          <!-- RESUMO -->
 
           <div class="resumo-doacao">
             <div>
@@ -250,36 +220,22 @@
             </div>
           </div>
 
-          <button type="submit" class="btn-confirmar">
-            Confirmar doação
-            <i class="fas fa-heart"></i>
-          </button>
-
+          <button type="submit" class="btn-confirmar">Confirmar doação<i class="fas fa-heart"></i></button>
           <p class="seguranca">
-            <i class="fas fa-shield-alt"></i>
-            Sua solidariedade merece cuidado e transparência.
-          </p>
-
+            <i class="fas fa-shield-alt"></i>Sua solidariedade merece cuidado e transparência.</p>
         </form>
       </div>
     </section>
 
-    
-
   </main>
-
-  <!-- RODAPÉ ORIGINAL -->
-
   <footer>
     <p>&copy; <span id="anoAtual"></span> ConectaCausa - Todos os direitos reservados.</p>
     <p>Contato: <a href="mailto:contato@conectacausa.org">contato@conectacausa.org</a></p>
-
     <p>
       <a href="#">Facebook</a> |
       <a href="#">Instagram</a> |
       <a href="#">WhatsApp</a> |
       <a href="./loginAdm.html">admin</a>
-
       <a href="https://fatectq.cps.sp.gov.br/">
         <img src="./img/logo fatec.jpg" alt="Fatec">
       </a>
@@ -287,29 +243,23 @@
   </footer>
 
   <!-- SCRIPTS -->
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./script/scripts.js"></script>
   <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-
   <script>
     new window.VLibras.Widget('https://vlibras.gov.br/app');
 
     // Tema
     const botaoTema = document.getElementById("botao-tema");
     const body = document.body;
-
     if (localStorage.getItem("tema") === "escuro") {
       body.classList.add("tema-escuro");
       botaoTema.textContent = "☀️";
     }
-
     botaoTema.addEventListener("click", () => {
       body.classList.toggle("tema-escuro");
-
       const temaAtivo = body.classList.contains("tema-escuro")
         ? "escuro" : "claro";
-
       localStorage.setItem("tema", temaAtivo);
       botaoTema.textContent = temaAtivo === "escuro" ? "☀️" : "🌙";
     });
@@ -327,7 +277,6 @@
         atualizarResumo();
       });
     });
-
     campoValor.addEventListener("input", () => {
       botoesValor.forEach(b => {
         b.classList.toggle(
@@ -335,11 +284,9 @@
           Number(b.dataset.valor) === Number(campoValor.value)
         );
       });
-
       atualizarResumo();
     });
 
-    // Atualização do resumo
     function atualizarResumo() {
       const valor = Number(campoValor.value) || 0;
 
@@ -348,15 +295,12 @@
           style: "currency",
           currency: "BRL"
         });
-
       const frequencia = document.querySelector(
         'input[name="tipoDoacao"]:checked'
       ).value;
-
       document.getElementById("resumoFrequencia").textContent =
         frequencia === "mensal" ? "Mensal" : "Única";
     }
-
     document.querySelectorAll('input[name="tipoDoacao"]')
       .forEach(input => {
         input.addEventListener("change", atualizarResumo);
@@ -365,22 +309,18 @@
     // Envio demonstrativo
     document.getElementById("formDoacao").addEventListener("submit", (e) => {
       e.preventDefault();
-
       if (Number(campoValor.value) <= 0) {
         alert("Digite um valor válido para a doação.");
         return;
       }
-
       const ong = document.getElementById("seleOng").value;
       const pagamento = document.querySelector(
         'input[name="pagamento"]:checked'
       );
-
       if (!ong || !pagamento) {
         alert("Preencha todos os campos.");
         return;
       }
-
       alert(
         "Obrigado pela sua solidariedade! 💜\n\n" +
         "ONG: " + ong + "\n" +
@@ -391,11 +331,8 @@
 
     document.getElementById("anoAtual").textContent =
       new Date().getFullYear();
-
     atualizarResumo();
   </script>
-
   <script src="./script/fotoPerfil.js"></script>
-
 </body>
 </html>
