@@ -1,3 +1,4 @@
+/* BANCO ANTIGO
 CREATE DATABASE conectacausa;
 USE conectacausa;
 
@@ -50,3 +51,4 @@ CREATE TABLE doacoes (
     FOREIGN KEY (doador_id) REFERENCES users(id),
     FOREIGN KEY (ong_id) REFERENCES ongs(id)
 );
+*/
