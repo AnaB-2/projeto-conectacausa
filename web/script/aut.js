@@ -1,5 +1,5 @@
-const API_USERS = "http://localhost:3650/users";
-const API_LOGIN = "http://localhost:3650/login";
+const API_USERS = "http://localhost:4002/users";
+const API_LOGIN = "http://localhost:4002/login";
 
 function CadastroValidation(event, form) {
     event.preventDefault();

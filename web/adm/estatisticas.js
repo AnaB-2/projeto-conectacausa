@@ -1,4 +1,4 @@
-const API_ESTATISTICAS = "http://localhost:3650/admin/estatisticas";
+const API_ESTATISTICAS = "http://localhost:4002/admin/estatisticas";
 let graficoMensal;
 let graficoStatus;
 

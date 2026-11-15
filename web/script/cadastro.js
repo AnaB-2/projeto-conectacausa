@@ -63,7 +63,7 @@ document.getElementById("formCadastro").addEventListener(
         // Envia os dados para a API
         try {
             const resposta = await fetch(
-                "http://localhost:3650/ongs",
+                "http://localhost:4002/ongs",
                 {
                     method: "POST",
                     headers: {
