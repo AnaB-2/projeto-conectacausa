@@ -1,3 +1,5 @@
+import { API_URL } from "./apiconfig.js";
+
 const botaoTema = document.getElementById("botao-tema");
 const body = document.body;
 // Verifica se existe uma preferência salva
@@ -63,7 +65,7 @@ document.getElementById("formCadastro").addEventListener(
         // Envia os dados para a API
         try {
             const resposta = await fetch(
-                "http://localhost:4002/ongs",
+                `${API_URL}/ongs`,
                 {
                     method: "POST",
                     headers: {

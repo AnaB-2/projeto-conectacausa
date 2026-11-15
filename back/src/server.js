@@ -12,14 +12,16 @@ dotenv.config();
 const Port = process.env.API_PORT || 3650;
 const app = express();
 
-app.use(cors({
-    origin: [
-        "http://127.0.0.1:5500",
-        "http://localhost:5500"
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
+// app.use(cors({
+//     origin: [
+//         "http://127.0.0.1:5500",
+//         "http://localhost:5500"
+//     ],
+//     methods: ["GET", "POST", "PUT", "DELETE"],
+//     allowedHeaders: ["Content-Type", "Authorization"]
+// }));
+
+app.use(cors());
 
 app.use(express.json());
 

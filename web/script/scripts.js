@@ -1,3 +1,7 @@
+import { API_URL } from "./apiconfig.js";
+
+const API_USERS = `$${API_URL}/users`;
+
 //captura o botão menu de hamburguer
 const botaoMenu = document.querySelector(".botaoMenu");
 

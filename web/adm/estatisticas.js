@@ -1,4 +1,8 @@
-const API_ESTATISTICAS = "http://localhost:4002/admin/estatisticas";
+import { API_URL } from "../script/apiconfig";
+
+
+
+const API_ESTATISTICAS = `${API_URL}/admin/estatisticas`;
 let graficoMensal;
 let graficoStatus;
 
