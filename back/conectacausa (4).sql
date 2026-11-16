@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/11/2026 às 15:59
+-- Tempo de geração: 16/11/2026 às 14:54
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -81,8 +81,22 @@ CREATE TABLE `ongs` (
   `cep` varchar(9) DEFAULT NULL,
   `endereco` varchar(200) DEFAULT NULL,
   `numero` varchar(10) DEFAULT NULL,
-  `pix` varchar(100) DEFAULT NULL
+  `pix` varchar(100) DEFAULT NULL,
+  `latitude` decimal(10,8) DEFAULT NULL,
+  `longitude` decimal(11,8) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Despejando dados para a tabela `ongs`
+--
+
+INSERT INTO `ongs` (`id`, `usuario_id`, `nome_ong`, `cnpj`, `descricao`, `cidade`, `estado`, `foto`, `email`, `telefone`, `cep`, `endereco`, `numero`, `pix`, `latitude`, `longitude`) VALUES
+(1, 2, 'Ana', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15900123', 'rua general osório', '25', '963056586514851854', NULL, NULL),
+(2, 2, 'doar', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15900123', 'rua general osório', '32', '963056586514851854', NULL, NULL),
+(3, 2, 'patas', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15903402', 'rua dr mitre bedran', '52', '963056586514851854', NULL, NULL),
+(4, 3, 'patas conscientes', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15903402', 'rua dr mitre bedran', '52', '963056586514851854', NULL, NULL),
+(5, 2, 'Andre', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15903402', 'rua general osório', '22', '963056586514851854', NULL, NULL),
+(6, 2, 'patas', '963056586514851854', 'a', 'taquaritinga', NULL, NULL, 'a@gmail.com', '16994563265', '15903402', 'rua dr mitre bedran', '52', '963056586514851854', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -106,7 +120,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `nome`, `email`, `senha`, `tipo_usuario`, `telefone`, `data_cadastro`) VALUES
 (1, 'raafe', 'testet@teste', 'rafael', 'admin', '876543', '2026-11-01 23:52:55'),
-(2, 'Ana', 'a@gmail.com', 'ana', 'admin', '17996356230', '2026-11-13 14:55:00');
+(2, 'Ana', 'a@gmail.com', 'ana', 'admin', '17996356230', '2026-11-13 14:55:00'),
+(3, 'Andre', 'andre@gmail.com', 'andre', NULL, '17996356230', '2026-11-16 12:33:19');
 
 --
 -- Índices para tabelas despejadas
@@ -172,13 +187,13 @@ ALTER TABLE `doacoes`
 -- AUTO_INCREMENT de tabela `ongs`
 --
 ALTER TABLE `ongs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restrições para tabelas despejadas
