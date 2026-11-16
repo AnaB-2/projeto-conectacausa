@@ -16,6 +16,8 @@
     gtag('config', 'G-QNFYLZJ8TJ');
   </script>
   <link rel="stylesheet" href="./css/padrao-cabecalho.css">
+  <link rel="stylesheet" href="./css/index-estilonovo.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 </head>
 <body>
   <button id="botao-tema" title="Alternar tema">🌙</button>
@@ -75,106 +77,80 @@
 <div class="gtranslate_wrapper"></div>
 <script>window.gtranslateSettings = { "default_language": "pt", "languages": ["pt", "en"], "wrapper_selector": ".gtranslate_wrapper", "alt_flags": { "en": "usa", "pt": "brazil" } }</script>
 <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <br>
-  <section class="banner" aria-label="Apresentação do ConectaCausa">
-    <div class="bannerBG">
-      <div class="banner-conteudo">
-        <span class="banner-selo"><i class="fas fa-heart"></i> Juntos por um mundo melhor</span>
-        <h1>Pequenas ações.<br><strong>Grandes transformações.</strong></h1>
-        <p>Conectamos pessoas que querem ajudar a ONGs e causas que fazem a diferença. Encontre uma causa, conheça projetos e faça parte da mudança.</p>
-        <div class="banner-acoes">
-          <a class="bannerBtn bannerBtn-principal" href="./categ.html">Conheça as causas <i class="fas fa-arrow-right"></i></a>
-          <a class="bannerBtn bannerBtn-secundario" href="./cadastrar.html">Cadastre sua ONG</a>
-        </div>
-        <div class="banner-nota"><i class="fas fa-hand-holding-heart"></i> Solidariedade que aproxima quem quer ajudar de quem precisa.</div>
-      </div>
-      <div class="banner-decoracao" aria-hidden="true"><i class="fas fa-hands-holding-circle"></i></div>
-    </div>
-  </section>
-
-  <main id="conteudo" class="container">
-    <br>
-    <h2 class="titulo-categorias" style="font-size: 35px;">Categorias</h2>
-    <a href="./categ.html" style="color: black;">
-      <div class="categorias-container">
-        <div class="categoria-card">
-          <div class="categoria-icone">
-            <i class="fas fa-paw"></i>
+  <main class="cc-landing">
+    <section class="cc-hero">
+      <div class="cc-wrap cc-hero-grid">
+        <div>
+          <span class="cc-eyebrow"><i class="fa-solid fa-heart"></i> Solidariedade que aproxima</span>
+          <h1>O bem que você faz pode ser o <em>começo de tudo.</em></h1>
+          <p class="cc-hero-copy">Descubra causas que precisam de apoio, conheça organizações que transformam realidades e encontre uma maneira de fazer a diferença — do seu jeito.</p>
+          <div class="cc-actions">
+            <a class="cc-btn cc-btn-primary" href="./cadastrar.html">Quero fazer parte <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="cc-btn cc-btn-ghost" href="./entrar.html">Já tenho uma conta</a>
           </div>
-          <h3>Proteção Animal</h3>
-          <p>Cuidado e proteção de animais em situação de risco.</p>
+          <div class="cc-hero-note"><i class="fa-solid fa-shield-heart"></i> Um espaço para aproximar pessoas, projetos e oportunidades de ajudar.</div>
         </div>
-    </a>
-
-    <a href="./categ.html" style="color: black;">
-      <div class="categoria-card">
-        <div class="categoria-icone">
-          <i class="fas fa-utensils"></i>
+        <div class="cc-hero-visual" aria-label="Voluntários participando de uma ação solidária">
+          <div class="cc-hero-photo"><img src="./img/doar2.jpg" alt="Ação de solidariedade e doação"></div>
+          <div class="cc-floating"><i class="fa-solid fa-hands-holding-circle"></i> Toda ajuda pode abrir um novo caminho.</div>
+          <div class="cc-photo-tag">Conexões que geram impacto positivo</div>
         </div>
-        <h3>Combate à fome</h3>
-        <p>Distribuição de alimentos para comunidades carentes.</p>
       </div>
-    </a>
+    </section>
 
-    <a href="./categ.html" style="color: black;">
-      <div class="categoria-card">
-        <div class="categoria-icone">
-          <i class="fas fa-people-group"></i>
+    <section class="cc-intro-strip" aria-label="Como o ConectaCausa ajuda">
+      <div class="cc-wrap cc-intro-inner">
+        <div class="cc-intro-item"><div class="cc-intro-icon"><i class="fa-solid fa-magnifying-glass"></i></div><div><strong>Encontre uma causa</strong><span>Descubra iniciativas perto de você.</span></div></div>
+        <div class="cc-intro-item"><div class="cc-intro-icon"><i class="fa-solid fa-hand-holding-heart"></i></div><div><strong>Escolha como ajudar</strong><span>Contribua de acordo com suas possibilidades.</span></div></div>
+        <div class="cc-intro-item"><div class="cc-intro-icon"><i class="fa-solid fa-people-group"></i></div><div><strong>Faça parte da mudança</strong><span>Fortaleça quem transforma vidas.</span></div></div>
+      </div>
+    </section>
+
+    <section class="cc-section">
+      <div class="cc-wrap">
+        <div class="cc-section-heading"><span class="cc-kicker">Causas que importam</span><h2>Encontre uma causa que fala com você.</h2><p>Cada pessoa tem uma forma de contribuir. Explore as áreas atendidas pelo ConectaCausa e descubra onde sua solidariedade pode chegar.</p></div>
+        <div class="cc-cause-grid">
+          <a class="cc-cause" href="./categ.html"><div class="cc-cause-icon"><i class="fa-solid fa-paw"></i></div><h3>Proteção animal</h3><p>Acolhimento, cuidado e proteção para animais que precisam de uma chance.</p></a>
+          <a class="cc-cause" href="./categ.html"><div class="cc-cause-icon"><i class="fa-solid fa-book-open"></i></div><h3>Educação</h3><p>Mais oportunidades de aprender, crescer e construir novos futuros.</p></a>
+          <a class="cc-cause" href="./categ.html"><div class="cc-cause-icon"><i class="fa-solid fa-house-user"></i></div><h3>Apoio a famílias</h3><p>Rede de apoio para famílias em momentos de vulnerabilidade.</p></a>
+          <a class="cc-cause" href="./categ.html"><div class="cc-cause-icon"><i class="fa-solid fa-bowl-food"></i></div><h3>Combate à fome</h3><p>Iniciativas que levam alimento, cuidado e dignidade a quem precisa.</p></a>
         </div>
-        <h3>Apoio a famílias</h3>
-        <p>Auxílio para famílias em vulnerabilidade social.</p>
       </div>
-    </a>
+    </section>
 
-    <a href="./categ.html" style="color: black;">
-      <div class="categoria-card">
-        <div class="categoria-icone">
-          <i class="fas fa-book"></i>
+
+    <section class="cc-public-map-section cc-section" aria-labelledby="cc-public-map-title">
+      <div class="cc-wrap">
+        <div class="cc-section-heading">
+          <span class="cc-kicker">Encontre iniciativas</span>
+          <h2 id="cc-public-map-title">As ONGs também estão perto de você.</h2>
+          <p>Explore o mapa, conheça organizações cadastradas e descubra onde sua ajuda pode chegar.</p>
         </div>
-        <h3>Educação</h3>
-        <p>Projetos educacionais para crianças e jovens.</p>
-      </div>
-    </a>
-    </div> <br><br>
-
-    <h2 style="color: rgb(108, 47, 169); font-size: 35px;">ONGs Cadastradas</h2>
-    <div class="ong-lista my-5">
-      <div class="ong-card">
-        <img src="./img/doar.jpg" alt="Imagem ONG Alimento Solidário">
-        <p style="font-size: 25px;"><strong>Alimento Solidário</strong></p>
-        <p style="font-size: 20px;">Uma ONG dedicada a alimentar famílias em situação de vulnerabilidade.</p>
-      </div>
-      <div class="ong-card">
-        <img src="./img/doar2.jpg" alt="Imagem ONG Sementes do Bem">
-        <p style="font-size: 25px;"><strong>Sementes do Bem</strong></p>
-        <p style="font-size: 20px;">Levando comida e esperança para comunidades carentes.</p>
-      </div>
-    </div>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d29719.049639390738!2d-48.5116768!3d-21.3945817!3m2!1i1024!2i768!4f13.1!2m1!1songs%20taquaritinga!5e0!3m2!1spt-BR!2sbr!4v1776952252901!5m2!1spt-BR!2sbr"
-      width="1150" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    <div class="textos">
-      <section class="my-5">
-        <h2 style="color: rgb(108, 47, 169); font-size: 35px;">Por que as ONGs devem se cadastrar no projeto ConectaCausa</h2>
-        <div class="container my-4">
-          <p class="text-start" style="font-size: 25px;">
-            No ConectaCausa, acreditamos que toda ONG merece visibilidade e oportunidades para crescer. Ao se cadastrar
-            na plataforma, sua organização passa a fazer parte de uma rede que conecta pessoas dispostas a ajudar com
-            causas que realmente importam.
-            Estar no ConectaCausa aumenta o alcance da sua ONG, facilitando a captação de doações, voluntários e
-            parcerias. Além disso, você poderá divulgar seus projetos, compartilhar suas necessidades e mostrar o
-            impacto do seu trabalho para um público maior e mais engajado.
-            Nosso objetivo é fortalecer iniciativas sociais de todos os tipos — desde combate à fome até proteção animal
-            e educação — criando uma ponte entre quem quer ajudar e quem precisa de apoio.
-            Junte-se ao ConectaCausa e amplie o impacto da sua causa.
-          </p>
+        <div class="cc-map-layout cc-public-map-layout">
+          <div class="cc-map-card"><div id="mapaOngsPublico" aria-label="Mapa público com a localização das ONGs cadastradas"></div></div>
+          <aside class="cc-map-side">
+            <h3>ONGs cadastradas</h3>
+            <p>As organizações cadastradas no ConectaCausa aparecem aqui automaticamente.</p>
+            <div class="cc-ong-list" id="listaOngsPublico">
+              <div class="cc-ong-mini"><div class="pin"><i class="fa-solid fa-spinner fa-spin"></i></div><div><strong>Carregando organizações...</strong><span>Aguarde um instante</span></div></div>
+            </div>
+            <div class="cc-map-status" id="statusMapaPublico" role="status">Conectando à plataforma...</div>
+          </aside>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <section class="cc-story">
+      <div class="cc-wrap cc-story-grid cc-section">
+        <div class="cc-story-image"><img src="./img/familiasssss.webp" alt="Comunidade recebendo apoio de uma iniciativa social" loading="lazy"></div>
+        <div class="cc-story-copy"><span class="cc-kicker">Por trás de cada causa, existem pessoas</span><h2>Uma ponte entre quem quer ajudar e quem precisa de apoio.</h2><p>O ConectaCausa nasceu para aproximar pessoas solidárias de organizações que trabalham todos os dias por uma sociedade melhor. Aqui, você pode conhecer iniciativas, encontrar ONGs e descobrir maneiras de contribuir.</p><p class="cc-original-purpose">No ConectaCausa, acreditamos que toda ONG merece visibilidade e oportunidades para crescer. Ao se cadastrar na plataforma, sua organização passa a fazer parte de uma rede que conecta pessoas dispostas a ajudar com causas que realmente importam. Estar no ConectaCausa aumenta o alcance da sua ONG, facilitando a captação de doações, voluntários e parcerias. Além disso, você poderá divulgar seus projetos, compartilhar suas necessidades e mostrar o impacto do seu trabalho para um público maior e mais engajado. Nosso objetivo é fortalecer iniciativas sociais de todos os tipos — desde combate à fome até proteção animal e educação — criando uma ponte entre quem quer ajudar e quem precisa de apoio. Junte-se ao ConectaCausa e amplie o impacto da sua causa.</p><div class="cc-story-points"><div class="cc-story-point"><i class="fa-solid fa-circle-check"></i><span>Conheça projetos e organizações sociais.</span></div><div class="cc-story-point"><i class="fa-solid fa-circle-check"></i><span>Encontre causas alinhadas ao que é importante para você.</span></div><div class="cc-story-point"><i class="fa-solid fa-circle-check"></i><span>Ajude a dar visibilidade a iniciativas que fazem a diferença.</span></div></div><a class="cc-btn cc-btn-primary" style="background:#63339a;color:#fff!important" href="./quemsomos.html">Conheça o ConectaCausa <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+    <section class="cc-final-cta"><div class="cc-wrap"><div class="cc-cta-panel"><div><h2>Sua próxima atitude pode transformar uma história.</h2><p>Crie sua conta e descubra como participar dessa rede de solidariedade.</p></div><a class="cc-btn cc-btn-primary" href="./cadastrar.html">Começar agora <i class="fa-solid fa-arrow-right"></i></a></div></div></section>
   </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="./script/landing-map.js"></script>
 
   <!-- Rodapé -->
   <footer>

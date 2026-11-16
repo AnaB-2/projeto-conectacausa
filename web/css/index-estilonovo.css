@@ -1,0 +1,757 @@
+
+/* =========================================
+   EXPERIÊNCIA VISUAL DA PÁGINA PÚBLICA
+   Sem alterar header ou footer
+========================================= */
+
+:root {
+    --cc-ink: #241a31;
+    --cc-purple: #63339a;
+    --cc-purple-dark: #32194f;
+    --cc-lilac: #f1e9f8;
+    --cc-paper: #fbf9f6;
+    --cc-muted: #746b7c;
+    --cc-line: #ece5f1;
+    --cc-orange: #f2a65a;
+}
+
+body {
+    background: var(--cc-paper);
+    color: var(--cc-ink);
+}
+
+.cc-landing {
+    overflow: hidden;
+    background: var(--cc-paper);
+}
+
+.cc-landing * {
+    box-sizing: border-box;
+}
+
+.cc-wrap {
+    width: min(1180px, calc(100% - 44px));
+    margin: auto;
+}
+
+/* =========================================
+   HERO / BANNER PRINCIPAL
+========================================= */
+
+.cc-hero {
+    position: relative;
+    isolation: isolate;
+    min-height: 610px;
+    display: grid;
+    align-items: center;
+    background: linear-gradient(
+        112deg,
+        #26143c 0%,
+        #432365 57%,
+        #7546a1 100%
+    );
+    color: #fff;
+    padding: 76px 0 86px;
+}
+
+.cc-hero:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background:
+        radial-gradient(
+            circle at 78% 20%,
+            rgba(255, 255, 255, .16),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 5% 95%,
+            rgba(227, 177, 255, .13),
+            transparent 34%
+        );
+}
+
+.cc-hero-grid {
+    display: grid;
+    grid-template-columns: 1.04fr .96fr;
+    gap: 54px;
+    align-items: center;
+}
+
+.cc-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 15px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 99px;
+    background: rgba(255, 255, 255, .09);
+    font-size: .83rem;
+    letter-spacing: .04em;
+    color: #f5eaff;
+}
+
+.cc-hero h1 {
+    font-size: clamp(2.7rem, 5.2vw, 4.8rem);
+    line-height: 1.03;
+    letter-spacing: -.055em;
+    font-weight: 800;
+    margin: 25px 0 22px;
+    max-width: 650px;
+}
+
+.cc-hero h1 em {
+    font-style: normal;
+    color: #f4c78f;
+}
+
+.cc-hero-copy {
+    max-width: 570px;
+    color: #e5d9ef;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0 0 30px;
+}
+
+.cc-actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.cc-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-decoration: none !important;
+    border-radius: 999px;
+    padding: 15px 23px;
+    font-weight: 750;
+    transition: .2s transform, .2s box-shadow;
+}
+
+.cc-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px #160b2444;
+}
+
+.cc-btn-primary {
+    background: #f4bd7e;
+    color: #2c193d !important;
+}
+
+.cc-btn-ghost {
+    border: 1px solid #ffffff70;
+    color: #fff !important;
+    background: #ffffff0d;
+}
+
+.cc-hero-note {
+    margin-top: 26px;
+    color: #d8c9e5;
+    font-size: .88rem;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* =========================================
+   IMAGEM DO BANNER
+========================================= */
+
+.cc-hero-visual {
+    position: relative;
+    min-height: 430px;
+}
+
+.cc-hero-photo {
+    position: absolute;
+    inset: 15px 28px 22px 22px;
+    border-radius: 28px 110px 28px 28px;
+    overflow: hidden;
+    box-shadow: 0 30px 65px #160b2466;
+    transform: rotate(2deg);
+    border: 7px solid #ffffff20;
+}
+
+.cc-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cc-photo-tag {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #fff;
+    color: #37224b;
+    padding: 17px 21px;
+    border-radius: 0 18px 0 0;
+    font-weight: 750;
+    box-shadow: 0 10px 30px #160b2433;
+}
+
+.cc-floating {
+    position: absolute;
+    right: 0;
+    top: 8px;
+    background: #fff;
+    color: #37224b;
+    padding: 17px 20px;
+    border-radius: 18px;
+    box-shadow: 0 16px 35px #160b2433;
+    max-width: 190px;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.cc-floating i {
+    color: #9a62c9;
+    font-size: 1.35rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   FAIXA INFORMATIVA
+========================================= */
+
+.cc-intro-strip {
+    background: #fff;
+    border-bottom: 1px solid var(--cc-line);
+}
+
+.cc-intro-inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    padding: 26px 0;
+}
+
+.cc-intro-item {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    padding: 5px 28px;
+    border-right: 1px solid var(--cc-line);
+}
+
+.cc-intro-item:first-child {
+    padding-left: 0;
+}
+
+.cc-intro-item:last-child {
+    border: 0;
+}
+
+.cc-intro-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    background: var(--cc-lilac);
+    color: var(--cc-purple);
+    font-size: 1.15rem;
+    flex: none;
+}
+
+.cc-intro-item strong {
+    display: block;
+    font-size: .96rem;
+}
+
+.cc-intro-item span {
+    display: block;
+    color: var(--cc-muted);
+    font-size: .82rem;
+    margin-top: 3px;
+}
+
+/* =========================================
+   SEÇÕES GERAIS
+========================================= */
+
+.cc-section {
+    padding: 86px 0;
+}
+
+.cc-section-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 38px;
+}
+
+.cc-kicker {
+    color: var(--cc-purple);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.cc-section-heading h2 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    letter-spacing: -.045em;
+    margin: 12px 0;
+    color: var(--cc-ink);
+    font-weight: 800;
+}
+
+.cc-section-heading p {
+    color: var(--cc-muted);
+    line-height: 1.75;
+    margin: 0;
+}
+
+/* =========================================
+   CARDS DE CAUSAS
+========================================= */
+
+.cc-cause-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 17px;
+}
+
+.cc-cause {
+    display: block;
+    text-decoration: none !important;
+    color: inherit !important;
+    background: #fff;
+    border: 1px solid var(--cc-line);
+    border-radius: 20px;
+    padding: 25px 22px;
+    min-height: 210px;
+    transition: .22s;
+    box-shadow: 0 7px 22px #36204408;
+}
+
+.cc-cause:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 36px #36204414;
+}
+
+.cc-cause-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
+    display: grid;
+    place-items: center;
+    font-size: 1.35rem;
+    margin-bottom: 22px;
+}
+
+.cc-cause h3 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.cc-cause p {
+    font-size: .88rem;
+    line-height: 1.6;
+    color: var(--cc-muted);
+    margin: 0;
+}
+
+.cc-cause:nth-child(1) .cc-cause-icon {
+    background: #f0e4fb;
+    color: #7842a9;
+}
+
+.cc-cause:nth-child(2) .cc-cause-icon {
+    background: #e3efff;
+    color: #4778b9;
+}
+
+.cc-cause:nth-child(3) .cc-cause-icon {
+    background: #fde8f0;
+    color: #b64e7d;
+}
+
+.cc-cause:nth-child(4) .cc-cause-icon {
+    background: #fff0d9;
+    color: #b5792c;
+}
+
+/* =========================================
+   SEÇÃO NOSSA HISTÓRIA
+========================================= */
+
+.cc-story {
+    background: #f1eaf7;
+}
+
+.cc-story-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.cc-story-image {
+    height: 390px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 18px 42px #3c24501c;
+}
+
+.cc-story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cc-story-copy h2 {
+    font-size: clamp(2rem, 3.2vw, 2.8rem);
+    line-height: 1.1;
+    letter-spacing: -.04em;
+    margin: 12px 0 18px;
+    font-weight: 800;
+}
+
+.cc-story-copy p {
+    color: #655a70;
+    line-height: 1.85;
+}
+
+.cc-story-points {
+    display: grid;
+    gap: 13px;
+    margin: 24px 0;
+}
+
+.cc-story-point {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-weight: 650;
+}
+
+.cc-story-point i {
+    color: var(--cc-purple);
+    margin-top: 4px;
+}
+
+/* =========================================
+   CHAMADA FINAL
+========================================= */
+
+.cc-final-cta {
+    padding: 0 0 86px;
+    background: #f1eaf7;
+}
+
+.cc-cta-panel {
+    background: linear-gradient(115deg, #3b2058, #70429a);
+    color: #fff;
+    border-radius: 28px;
+    padding: 42px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.cc-cta-panel h2 {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 800;
+    margin: 0 0 8px;
+}
+
+.cc-cta-panel p {
+    margin: 0;
+    color: #e5d9ef;
+    line-height: 1.6;
+}
+
+/* =========================================
+   MAPA PÚBLICO
+========================================= */
+
+.cc-public-map-section {
+    background: #f8f5fb;
+}
+
+.cc-public-map-layout {
+    margin-top: 30px;
+}
+
+.cc-public-map-layout #mapaOngsPublico {
+    height: 430px;
+    min-height: 340px;
+    width: 100%;
+    border-radius: 18px;
+    z-index: 1;
+}
+
+.cc-public-map-layout .cc-map-card {
+    overflow: hidden;
+    border-radius: 22px;
+}
+
+.cc-original-purpose {
+    margin-top: 15px !important;
+}
+
+/* =========================================
+   COMPONENTES COMPARTILHADOS DO MAPA
+========================================= */
+
+.cc-public-map-layout {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr;
+    gap: 17px;
+}
+
+.cc-public-map-layout .cc-map-card {
+    background: #fff;
+    border: 1px solid #ece5f1;
+    border-radius: 20px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+.cc-public-map-layout .cc-map-side {
+    background: #fff;
+    border: 1px solid #ece5f1;
+    border-radius: 20px;
+    padding: 22px;
+}
+
+.cc-public-map-layout .cc-map-side h3 {
+    font-weight: 850;
+    font-size: 1.1rem;
+    margin: 0 0 8px;
+}
+
+.cc-public-map-layout .cc-map-side > p {
+    color: #746b7c;
+    font-size: .86rem;
+    line-height: 1.6;
+    margin: 0 0 17px;
+}
+
+.cc-public-map-layout .cc-ong-list {
+    display: grid;
+    gap: 10px;
+    max-height: 315px;
+    overflow: auto;
+}
+
+.cc-public-map-layout .cc-ong-mini {
+    display: flex;
+    gap: 11px;
+    padding: 12px;
+    border-radius: 13px;
+    background: #faf8fc;
+}
+
+.cc-public-map-layout .cc-ong-mini .pin {
+    width: 37px;
+    height: 37px;
+    display: grid;
+    place-items: center;
+    background: #efe6f7;
+    color: #63339a;
+    border-radius: 12px;
+    flex: none;
+}
+
+.cc-public-map-layout .cc-ong-mini strong {
+    display: block;
+    font-size: .86rem;
+}
+
+.cc-public-map-layout .cc-ong-mini span {
+    display: block;
+    color: #746b7c;
+    font-size: .76rem;
+    margin-top: 3px;
+}
+
+.cc-public-map-layout .cc-map-status {
+    font-size: .78rem;
+    color: #746b7c;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.cc-map-empty {
+    color: #746b7c;
+    font-size: .86rem;
+    line-height: 1.5;
+}
+
+/* =========================================
+   BOTÃO DE ALTERAÇÃO DE TEMA
+========================================= */
+
+#botao-tema {
+    top: auto !important;
+    left: auto !important;
+    right: 16px !important;
+    bottom: 18px !important;
+    transform: none !important;
+    z-index: 1001;
+}
+
+#botao-tema:hover {
+    transform: scale(1.08) !important;
+}
+
+/* =========================================
+   RESPONSIVIDADE - TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .cc-hero-grid,
+    .cc-story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cc-hero {
+        padding: 58px 0;
+    }
+
+    .cc-hero-visual {
+        min-height: 370px;
+    }
+
+    .cc-cause-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cc-intro-item {
+        padding: 5px 14px;
+    }
+
+    .cc-public-map-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cc-public-map-layout .cc-ong-list {
+        max-height: 220px;
+    }
+}
+
+/* =========================================
+   RESPONSIVIDADE - CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .cc-wrap {
+        width: min(100% - 30px, 1180px);
+    }
+
+    .cc-hero {
+        min-height: auto;
+        padding: 48px 0 58px;
+    }
+
+    .cc-hero h1 {
+        font-size: 2.75rem;
+    }
+
+    .cc-hero-copy {
+        font-size: 1rem;
+    }
+
+    .cc-hero-visual {
+        min-height: 300px;
+    }
+
+    .cc-hero-photo {
+        inset: 12px 12px 14px 8px;
+        border-radius: 22px 75px 22px 22px;
+    }
+
+    .cc-floating {
+        right: -2px;
+        top: 0;
+        max-width: 150px;
+        padding: 13px;
+        font-size: .78rem;
+    }
+
+    .cc-photo-tag {
+        font-size: .82rem;
+        padding: 13px;
+    }
+
+    .cc-intro-inner {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 20px 0;
+    }
+
+    .cc-intro-item,
+    .cc-intro-item:first-child {
+        padding: 0;
+        border: 0;
+    }
+
+    .cc-section {
+        padding: 60px 0;
+    }
+
+    .cc-cause-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 11px;
+    }
+
+    .cc-cause {
+        padding: 17px 14px;
+        min-height: 195px;
+    }
+
+    .cc-cause-icon {
+        margin-bottom: 16px;
+    }
+
+    .cc-cause h3 {
+        font-size: .96rem;
+    }
+
+    .cc-cause p {
+        font-size: .8rem;
+    }
+
+    .cc-story-image {
+        height: 270px;
+    }
+
+    .cc-cta-panel {
+        padding: 28px 23px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .cc-final-cta {
+        padding-bottom: 60px;
+    }
+}
+
+/* =========================================
+   RESPONSIVIDADE - MAPA
+========================================= */
+
+@media (max-width: 700px) {
+
+    .cc-public-map-layout #mapaOngsPublico {
+        height: 340px;
+        min-height: 300px;
+    }
+
+    .cc-public-map-layout {
+        gap: 16px;
+    }
+}
