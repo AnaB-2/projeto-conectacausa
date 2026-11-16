@@ -29,19 +29,6 @@ function fecharmenu(){
     menu.classList.add("menuFechado");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 //cria uma instância do objeto que contém todas as informações sobre a data atual
 const data = new Date();
 
@@ -76,19 +63,24 @@ function filtrarONGs(termo) {
   });
 }
 
-// Evento de digitação em tempo real
-pesquisaInput.addEventListener("input", (e) => {
-  filtrarONGs(e.target.value);
-});
+// Os controles de pesquisa só existem nas páginas que possuem a busca.
+if (pesquisaInput) {
+  // Evento de digitação em tempo real
+  pesquisaInput.addEventListener("input", (e) => {
+    filtrarONGs(e.target.value);
+  });
 
-// Evento do botão de busca
-pesquisaBtn.addEventListener("click", () => {
-  filtrarONGs(pesquisaInput.value);
-});
+  // Permitir pesquisa ao pressionar Enter
+  pesquisaInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      filtrarONGs(pesquisaInput.value);
+    }
+  });
+}
 
-// Permitir pesquisa ao pressionar Enter
-pesquisaInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
+// Evento do botão de busca, quando ele existir na página.
+if (pesquisaBtn && pesquisaInput) {
+  pesquisaBtn.addEventListener("click", () => {
     filtrarONGs(pesquisaInput.value);
-  }
-});
+  });
+}
