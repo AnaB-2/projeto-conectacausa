@@ -1,5 +1,7 @@
-const API_USERS = "http://localhost:4002/users";
-const API_LOGIN = "http://localhost:4002/login";
+import { API_URL } from "./apiconfig.js";
+
+const API_USERS = `${API_URL}/users`;
+const API_LOGIN = `${API_URL}/login`;
 
 function CadastroValidation(event, form) {
     event.preventDefault();

@@ -1,10 +1,12 @@
+import { API_URL } from "./apiconfig.js";
+
 (() => {
   const mapElement = document.getElementById('mapaOngsPublico');
   if (!mapElement || !window.L) return;
   const list = document.getElementById('listaOngsPublico');
   const status = document.getElementById('statusMapaPublico');
-  const isLocalPreview = ['localhost', '127.0.0.1'].includes(window.location.hostname) || ['8080', '5500', '5501'].includes(window.location.port);
-  const apiBase = isLocalPreview ? `${window.location.protocol}//${window.location.hostname}:3650` : window.location.origin;
+  const apiBase = API_URL;
+
   const map = L.map(mapElement, { scrollWheelZoom: false }).setView([-21.406, -48.505], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
