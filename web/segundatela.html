@@ -21,6 +21,13 @@
 </head>
 <body>
     <button id="botao-tema" title="Alternar tema">🌙</button>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -319,24 +326,26 @@
     <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-
-        const botaoTema = document.getElementById("botao-tema");
-        const body = document.body;
-
-        if (localStorage.getItem("tema") === "escuro") {
-            body.classList.add("tema-escuro");
-            botaoTema.textContent = "☀️";
-        }
-
-        botaoTema.addEventListener("click", () => {
-            body.classList.toggle("tema-escuro");
-            const temaAtivo = body.classList.contains("tema-escuro") ? "escuro" : "claro";
-            localStorage.setItem("tema", temaAtivo);
-            botaoTema.textContent = temaAtivo === "escuro" ? "☀️" : "🌙";
-        });
-
         document.getElementById('anoAtual').textContent = new Date().getFullYear();
     </script>
+    <script>
+    // ======== SCRIPT DO BOTÃO DE TEMA ========
+    const botaoTema = document.getElementById("botao-tema");
+    const body = document.body;
+
+    // Verifica se há preferência salva
+    if (localStorage.getItem("tema") === "escuro") {
+      body.classList.add("tema-escuro");
+      botaoTema.textContent = "☀️";
+    }
+
+    botaoTema.addEventListener("click", () => {
+      body.classList.toggle("tema-escuro");
+      const temaAtivo = body.classList.contains("tema-escuro") ? "escuro" : "claro";
+      localStorage.setItem("tema", temaAtivo);
+      botaoTema.textContent = temaAtivo === "escuro" ? "☀️" : "🌙";
+    });
+  </script>
 
     <script type="module" src="./script/fotoPerfil.js"></script>
 </body>
