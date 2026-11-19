@@ -26,7 +26,9 @@
         <label for="password">Senha:</label>
         <input name="password" type="password" placeholder="Senha" required />
 
-        <button type="submit">Cadastrar</button>
+        <a href="entrar.html">
+          <button type="submit">Cadastrar</button>
+        </a>
 
         <div id="links">
           <a href="./segundatela.html">Início</a>
@@ -35,13 +37,6 @@
       </form>
     </div>
   </div>
-
-  <script>
-    document.getElementById("formCadastrar").addEventListener("submit", function(event) {
-      event.preventDefault();
-      window.location.href = "./index.html";
-    });
-  </script>
 
   <script type="module" src="./script/aut.js"></script>
 </body>

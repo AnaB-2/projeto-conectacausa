@@ -3,8 +3,9 @@
 // O celular e o computador precisam estar na mesma rede Wi-Fi.
 // Emulador Android: 10.0.2.2 aponta para o computador host.
 //http://10.0.2.2:3650/ roda no pc da fatec
-//endereco notebook bia http://192.168.0.3:4002/
-export const API_HOST = "http://10.0.2.2:4002/"; 
+//endereco notebook bia http://192.168.0.3:4002/ 
+
+export const API_HOST = "http://192.168.10.174:4002/"; 
 
 export async function testarConexao() {
   const response = await fetch(`${API_HOST}test`);

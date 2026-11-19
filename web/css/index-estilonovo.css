@@ -605,6 +605,15 @@ body {
 #botao-tema:hover {
     transform: scale(1.08) !important;
 }
+#botao-tema {
+    position: fixed !important;
+    top: 50% !important;
+    left: 20px !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: translateY(-50%) !important;
+    z-index: 9999 !important;
+}
 
 /* =========================================
    RESPONSIVIDADE - TABLETS

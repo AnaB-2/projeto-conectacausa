@@ -194,7 +194,7 @@ header.cc-cabecalho .atalho-perfil {
   color: #292334 !important;
 
   font-size: .9rem !important;
-  font-weight: 650 !important;
+  font-weight: normal !important;
   line-height: 1.2 !important;
 
   text-decoration: none !important;
@@ -407,7 +407,7 @@ footer a:hover {
     gap: 6px !important;
     font-size: .78rem !important;
   }
-
+ 
   header.cc-cabecalho #fotoMenuUsuario {
     width: 34px !important;
     height: 34px !important;
