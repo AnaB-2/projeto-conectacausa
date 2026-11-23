@@ -1,9 +1,3 @@
-
-/* =========================================
-   EXPERIÊNCIA VISUAL DA PÁGINA PÚBLICA
-   Sem alterar header ou footer
-========================================= */
-
 :root {
     --cc-ink: #241a31;
     --cc-purple: #63339a;
@@ -14,30 +8,29 @@
     --cc-line: #ece5f1;
     --cc-orange: #f2a65a;
 }
-
 body {
     background: var(--cc-paper);
     color: var(--cc-ink);
 }
 
+/* Configuração geral da página inicial */
 .cc-landing {
     overflow: hidden;
     background: var(--cc-paper);
 }
 
+/* Ajusta o tamanho dos elementos */
 .cc-landing * {
     box-sizing: border-box;
 }
 
+/* Centraliza o conteúdo da página */
 .cc-wrap {
     width: min(1180px, calc(100% - 44px));
     margin: auto;
 }
 
-/* =========================================
-   HERO / BANNER PRINCIPAL
-========================================= */
-
+/* Banner principal da página */
 .cc-hero {
     position: relative;
     isolation: isolate;
@@ -54,6 +47,7 @@ body {
     padding: 76px 0 86px;
 }
 
+/* Efeitos de luz do banner */
 .cc-hero:before {
     content: "";
     position: absolute;
@@ -72,6 +66,7 @@ body {
         );
 }
 
+/* Divide o banner em duas colunas */
 .cc-hero-grid {
     display: grid;
     grid-template-columns: 1.04fr .96fr;
@@ -79,6 +74,7 @@ body {
     align-items: center;
 }
 
+/* Etiqueta pequena do banner */
 .cc-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -92,6 +88,7 @@ body {
     color: #f5eaff;
 }
 
+/* Título principal do banner */
 .cc-hero h1 {
     font-size: clamp(2.7rem, 5.2vw, 4.8rem);
     line-height: 1.03;
@@ -101,11 +98,13 @@ body {
     max-width: 650px;
 }
 
+/* Destaque colorido no título */
 .cc-hero h1 em {
     font-style: normal;
     color: #f4c78f;
 }
 
+/* Texto de apresentação do banner */
 .cc-hero-copy {
     max-width: 570px;
     color: #e5d9ef;
@@ -114,12 +113,14 @@ body {
     margin: 0 0 30px;
 }
 
+/* Organiza os botões do banner */
 .cc-actions {
     display: flex;
     gap: 13px;
     flex-wrap: wrap;
 }
 
+/* Estilo geral dos botões */
 .cc-btn {
     display: inline-flex;
     align-items: center;
@@ -132,22 +133,26 @@ body {
     transition: .2s transform, .2s box-shadow;
 }
 
+/* Efeito ao passar o mouse nos botões */
 .cc-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 25px #160b2444;
 }
 
+/* Botão principal */
 .cc-btn-primary {
     background: #f4bd7e;
     color: #2c193d !important;
 }
 
+/* Botão secundário */
 .cc-btn-ghost {
     border: 1px solid #ffffff70;
     color: #fff !important;
     background: #ffffff0d;
 }
 
+/* Texto complementar do banner */
 .cc-hero-note {
     margin-top: 26px;
     color: #d8c9e5;
@@ -157,15 +162,13 @@ body {
     gap: 9px;
 }
 
-/* =========================================
-   IMAGEM DO BANNER
-========================================= */
-
+/* Área da imagem do banner */
 .cc-hero-visual {
     position: relative;
     min-height: 430px;
 }
 
+/* Posiciona e estiliza a foto do banner */
 .cc-hero-photo {
     position: absolute;
     inset: 15px 28px 22px 22px;
@@ -176,6 +179,7 @@ body {
     border: 7px solid #ffffff20;
 }
 
+/* Ajusta a imagem do banner */
 .cc-hero-photo img {
     width: 100%;
     height: 100%;
@@ -183,6 +187,7 @@ body {
     display: block;
 }
 
+/* Etiqueta sobre a foto */
 .cc-photo-tag {
     position: absolute;
     left: 0;
@@ -195,6 +200,7 @@ body {
     box-shadow: 0 10px 30px #160b2433;
 }
 
+/* Caixa flutuante sobre a imagem */
 .cc-floating {
     position: absolute;
     right: 0;
@@ -210,6 +216,7 @@ body {
     line-height: 1.35;
 }
 
+/* Ícone da caixa flutuante */
 .cc-floating i {
     color: #9a62c9;
     font-size: 1.35rem;
@@ -217,15 +224,13 @@ body {
     margin-bottom: 8px;
 }
 
-/* =========================================
-   FAIXA INFORMATIVA
-========================================= */
-
+/* Faixa de informações abaixo do banner */
 .cc-intro-strip {
     background: #fff;
     border-bottom: 1px solid var(--cc-line);
 }
 
+/* Organiza os três itens informativos */
 .cc-intro-inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -233,6 +238,7 @@ body {
     padding: 26px 0;
 }
 
+/* Estiliza cada item informativo */
 .cc-intro-item {
     display: flex;
     gap: 14px;
@@ -241,14 +247,17 @@ body {
     border-right: 1px solid var(--cc-line);
 }
 
+/* Remove o espaço do primeiro item */
 .cc-intro-item:first-child {
     padding-left: 0;
 }
 
+/* Remove a borda do último item */
 .cc-intro-item:last-child {
     border: 0;
 }
 
+/* Ícones dos itens informativos */
 .cc-intro-icon {
     width: 46px;
     height: 46px;
@@ -261,11 +270,13 @@ body {
     flex: none;
 }
 
+/* Título dos itens informativos */
 .cc-intro-item strong {
     display: block;
     font-size: .96rem;
 }
 
+/* Descrição dos itens informativos */
 .cc-intro-item span {
     display: block;
     color: var(--cc-muted);
@@ -273,20 +284,94 @@ body {
     margin-top: 3px;
 }
 
-/* =========================================
-   SEÇÕES GERAIS
-========================================= */
+/* Painel de estatísticas */
+.cc-impact {
+    background: linear-gradient(120deg, #32194f, #65408a);
+    border-radius: 25px;
+    padding: 32px;
+    color: #fff;
+}
 
+/* Cabeçalho das estatísticas */
+.cc-impact-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+/* Título das estatísticas */
+.cc-impact h2 {
+    font-size: 1.65rem;
+    font-weight: 850;
+    margin: 0 0 6px;
+}
+
+/* Texto das estatísticas */
+.cc-impact p {
+    color: #dfd2e9;
+    margin: 0;
+}
+
+/* Etiqueta demonstrativa */
+.cc-demo-label {
+    font-size: .72rem;
+    color: #f6d4a9;
+    border: 1px solid #f6d4a966;
+    border-radius: 99px;
+    padding: 7px 11px;
+    white-space: nowrap;
+}
+
+/* Organiza os quatro indicadores */
+.cc-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Cartões individuais das estatísticas */
+.cc-stat {
+    background: #ffffff12;
+    border: 1px solid #ffffff20;
+    border-radius: 17px;
+    padding: 19px;
+}
+
+/* Ícones das estatísticas */
+.cc-stat i {
+    color: #e9bf8b;
+    font-size: 1.15rem;
+}
+
+/* Números das estatísticas */
+.cc-stat strong {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: -.04em;
+    margin: 10px 0 3px;
+}
+
+/* Legendas das estatísticas */
+.cc-stat span {
+    color: #e1d5e9;
+    font-size: .82rem;
+}
+
+/* Espaçamento das seções */
 .cc-section {
     padding: 86px 0;
 }
 
+/* Centraliza os títulos das seções */
 .cc-section-heading {
     text-align: center;
     max-width: 680px;
     margin: 0 auto 38px;
 }
 
+/* Pequeno título acima do título principal */
 .cc-kicker {
     color: var(--cc-purple);
     font-size: .78rem;
@@ -295,6 +380,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Título das seções */
 .cc-section-heading h2 {
     font-size: clamp(2rem, 3.5vw, 3rem);
     letter-spacing: -.045em;
@@ -303,22 +389,21 @@ body {
     font-weight: 800;
 }
 
+/* Descrição das seções */
 .cc-section-heading p {
     color: var(--cc-muted);
     line-height: 1.75;
     margin: 0;
 }
 
-/* =========================================
-   CARDS DE CAUSAS
-========================================= */
-
+/* Organiza os quatro cartões de causas */
 .cc-cause-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 17px;
 }
 
+/* Cartões das causas */
 .cc-cause {
     display: block;
     text-decoration: none !important;
@@ -332,11 +417,13 @@ body {
     box-shadow: 0 7px 22px #36204408;
 }
 
+/* Efeito ao passar o mouse nos cartões */
 .cc-cause:hover {
     transform: translateY(-6px);
     box-shadow: 0 18px 36px #36204414;
 }
 
+/* Ícones dos cartões de causas */
 .cc-cause-icon {
     width: 54px;
     height: 54px;
@@ -347,12 +434,14 @@ body {
     margin-bottom: 22px;
 }
 
+/* Títulos dos cartões de causas */
 .cc-cause h3 {
     font-size: 1.08rem;
     font-weight: 800;
     margin: 0 0 8px;
 }
 
+/* Textos dos cartões de causas */
 .cc-cause p {
     font-size: .88rem;
     line-height: 1.6;
@@ -360,34 +449,36 @@ body {
     margin: 0;
 }
 
+/* Cor do primeiro ícone */
 .cc-cause:nth-child(1) .cc-cause-icon {
     background: #f0e4fb;
     color: #7842a9;
 }
 
+/* Cor do segundo ícone */
 .cc-cause:nth-child(2) .cc-cause-icon {
     background: #e3efff;
     color: #4778b9;
 }
 
+/* Cor do terceiro ícone */
 .cc-cause:nth-child(3) .cc-cause-icon {
     background: #fde8f0;
     color: #b64e7d;
 }
 
+/* Cor do quarto ícone */
 .cc-cause:nth-child(4) .cc-cause-icon {
     background: #fff0d9;
     color: #b5792c;
 }
 
-/* =========================================
-   SEÇÃO NOSSA HISTÓRIA
-========================================= */
-
+/* Seção de apresentação da história */
 .cc-story {
     background: #f1eaf7;
 }
 
+/* Divide a história em duas colunas */
 .cc-story-grid {
     display: grid;
     grid-template-columns: .9fr 1.1fr;
@@ -395,6 +486,7 @@ body {
     align-items: center;
 }
 
+/* Imagem da seção de história */
 .cc-story-image {
     height: 390px;
     border-radius: 28px;
@@ -402,12 +494,14 @@ body {
     box-shadow: 0 18px 42px #3c24501c;
 }
 
+/* Ajusta a imagem da história */
 .cc-story-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
+/* Título da história */
 .cc-story-copy h2 {
     font-size: clamp(2rem, 3.2vw, 2.8rem);
     line-height: 1.1;
@@ -416,17 +510,20 @@ body {
     font-weight: 800;
 }
 
+/* Texto da história */
 .cc-story-copy p {
     color: #655a70;
     line-height: 1.85;
 }
 
+/* Organiza os pontos da história */
 .cc-story-points {
     display: grid;
     gap: 13px;
     margin: 24px 0;
 }
 
+/* Itens individuais da história */
 .cc-story-point {
     display: flex;
     gap: 12px;
@@ -434,20 +531,19 @@ body {
     font-weight: 650;
 }
 
+/* Ícones dos pontos da história */
 .cc-story-point i {
     color: var(--cc-purple);
     margin-top: 4px;
 }
 
-/* =========================================
-   CHAMADA FINAL
-========================================= */
-
+/* Seção do botão final */
 .cc-final-cta {
     padding: 0 0 86px;
     background: #f1eaf7;
 }
 
+/* Painel de chamada para ação */
 .cc-cta-panel {
     background: linear-gradient(115deg, #3b2058, #70429a);
     color: #fff;
@@ -459,30 +555,31 @@ body {
     gap: 25px;
 }
 
+/* Título da chamada para ação */
 .cc-cta-panel h2 {
     font-size: clamp(1.7rem, 3vw, 2.5rem);
     font-weight: 800;
     margin: 0 0 8px;
 }
 
+/* Texto da chamada para ação */
 .cc-cta-panel p {
     margin: 0;
     color: #e5d9ef;
     line-height: 1.6;
 }
 
-/* =========================================
-   MAPA PÚBLICO
-========================================= */
-
+/* Fundo da seção do mapa público */
 .cc-public-map-section {
     background: #f8f5fb;
 }
 
+/* Espaçamento do mapa público */
 .cc-public-map-layout {
     margin-top: 30px;
 }
 
+/* Tamanho do mapa de ONGs */
 .cc-public-map-layout #mapaOngsPublico {
     height: 430px;
     min-height: 340px;
@@ -491,25 +588,25 @@ body {
     z-index: 1;
 }
 
+/* Esconde excessos do cartão do mapa */
 .cc-public-map-layout .cc-map-card {
     overflow: hidden;
     border-radius: 22px;
 }
 
+/* Espaçamento do texto de finalidade */
 .cc-original-purpose {
     margin-top: 15px !important;
 }
 
-/* =========================================
-   COMPONENTES COMPARTILHADOS DO MAPA
-========================================= */
-
+/* Divide o mapa e a lista de ONGs */
 .cc-public-map-layout {
     display: grid;
     grid-template-columns: 1.5fr .8fr;
     gap: 17px;
 }
 
+/* Cartão que contém o mapa */
 .cc-public-map-layout .cc-map-card {
     background: #fff;
     border: 1px solid #ece5f1;
@@ -518,6 +615,7 @@ body {
     overflow: hidden;
 }
 
+/* Painel lateral do mapa */
 .cc-public-map-layout .cc-map-side {
     background: #fff;
     border: 1px solid #ece5f1;
@@ -525,12 +623,14 @@ body {
     padding: 22px;
 }
 
+/* Título do painel lateral */
 .cc-public-map-layout .cc-map-side h3 {
     font-weight: 850;
     font-size: 1.1rem;
     margin: 0 0 8px;
 }
 
+/* Descrição do painel lateral */
 .cc-public-map-layout .cc-map-side > p {
     color: #746b7c;
     font-size: .86rem;
@@ -538,6 +638,7 @@ body {
     margin: 0 0 17px;
 }
 
+/* Lista de ONGs ao lado do mapa */
 .cc-public-map-layout .cc-ong-list {
     display: grid;
     gap: 10px;
@@ -545,6 +646,7 @@ body {
     overflow: auto;
 }
 
+/* Cartões individuais das ONGs */
 .cc-public-map-layout .cc-ong-mini {
     display: flex;
     gap: 11px;
@@ -553,6 +655,7 @@ body {
     background: #faf8fc;
 }
 
+/* Ícones dos cartões de ONGs */
 .cc-public-map-layout .cc-ong-mini .pin {
     width: 37px;
     height: 37px;
@@ -564,11 +667,13 @@ body {
     flex: none;
 }
 
+/* Nome das ONGs */
 .cc-public-map-layout .cc-ong-mini strong {
     display: block;
     font-size: .86rem;
 }
 
+/* Informações das ONGs */
 .cc-public-map-layout .cc-ong-mini span {
     display: block;
     color: #746b7c;
@@ -576,6 +681,7 @@ body {
     margin-top: 3px;
 }
 
+/* Status do mapa */
 .cc-public-map-layout .cc-map-status {
     font-size: .78rem;
     color: #746b7c;
@@ -583,16 +689,14 @@ body {
     line-height: 1.5;
 }
 
+/* Mensagem quando o mapa está vazio */
 .cc-map-empty {
     color: #746b7c;
     font-size: .86rem;
     line-height: 1.5;
 }
 
-/* =========================================
-   BOTÃO DE ALTERAÇÃO DE TEMA
-========================================= */
-
+/* Posicionamento do botão de tema */
 #botao-tema {
     top: auto !important;
     left: auto !important;
@@ -602,9 +706,12 @@ body {
     z-index: 1001;
 }
 
+/* Efeito ao passar o mouse no botão de tema */
 #botao-tema:hover {
     transform: scale(1.08) !important;
 }
+
+/* Fixa o botão de tema na lateral da tela */
 #botao-tema {
     position: fixed !important;
     top: 50% !important;
@@ -615,74 +722,54 @@ body {
     z-index: 9999 !important;
 }
 
-/* =========================================
-   RESPONSIVIDADE - TABLETS
-========================================= */
-
+/* Ajustes para telas médias */
 @media (max-width: 900px) {
-
     .cc-hero-grid,
     .cc-story-grid {
         grid-template-columns: 1fr;
     }
-
     .cc-hero {
         padding: 58px 0;
     }
-
     .cc-hero-visual {
         min-height: 370px;
     }
-
     .cc-cause-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
     .cc-intro-item {
         padding: 5px 14px;
     }
-
     .cc-public-map-layout {
         grid-template-columns: 1fr;
     }
-
     .cc-public-map-layout .cc-ong-list {
         max-height: 220px;
     }
 }
 
-/* =========================================
-   RESPONSIVIDADE - CELULARES
-========================================= */
-
+/* Ajustes para celulares */
 @media (max-width: 600px) {
-
     .cc-wrap {
         width: min(100% - 30px, 1180px);
     }
-
     .cc-hero {
         min-height: auto;
         padding: 48px 0 58px;
     }
-
     .cc-hero h1 {
         font-size: 2.75rem;
     }
-
     .cc-hero-copy {
         font-size: 1rem;
     }
-
     .cc-hero-visual {
         min-height: 300px;
     }
-
     .cc-hero-photo {
         inset: 12px 12px 14px 8px;
         border-radius: 22px 75px 22px 22px;
     }
-
     .cc-floating {
         right: -2px;
         top: 0;
@@ -690,77 +777,347 @@ body {
         padding: 13px;
         font-size: .78rem;
     }
-
     .cc-photo-tag {
         font-size: .82rem;
         padding: 13px;
     }
-
     .cc-intro-inner {
         grid-template-columns: 1fr;
         gap: 14px;
         padding: 20px 0;
     }
-
     .cc-intro-item,
     .cc-intro-item:first-child {
         padding: 0;
         border: 0;
     }
-
     .cc-section {
         padding: 60px 0;
     }
-
     .cc-cause-grid {
         grid-template-columns: 1fr 1fr;
         gap: 11px;
     }
-
     .cc-cause {
         padding: 17px 14px;
         min-height: 195px;
     }
-
     .cc-cause-icon {
         margin-bottom: 16px;
     }
-
     .cc-cause h3 {
         font-size: .96rem;
     }
-
     .cc-cause p {
         font-size: .8rem;
     }
-
     .cc-story-image {
         height: 270px;
     }
-
     .cc-cta-panel {
         padding: 28px 23px;
         align-items: flex-start;
         flex-direction: column;
     }
-
     .cc-final-cta {
         padding-bottom: 60px;
     }
 }
 
-/* =========================================
-   RESPONSIVIDADE - MAPA
-========================================= */
-
+/* Ajustes do mapa em celulares */
 @media (max-width: 700px) {
-
     .cc-public-map-layout #mapaOngsPublico {
         height: 340px;
         min-height: 300px;
     }
-
     .cc-public-map-layout {
         gap: 16px;
+    }
+}
+
+/* Estatísticas e campanhas transferidas para a página inicial */
+
+/* Área das estatísticas */
+.cc-moved-impact,
+.cc-moved-charts {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* Painel de estatísticas transferido */
+.cc-moved-impact .cc-impact {
+    max-width: 100%;
+    background: linear-gradient(120deg, #32194f, #65408a);
+    border-radius: 25px;
+    padding: 32px;
+    color: #fff;
+}
+
+/* Cabeçalho das estatísticas transferidas */
+.cc-moved-impact .cc-impact-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+/* Título das estatísticas transferidas */
+.cc-moved-impact .cc-impact h2 {
+    font-size: 1.65rem;
+    font-weight: 850;
+    margin: 0 0 6px;
+}
+
+/* Texto das estatísticas transferidas */
+.cc-moved-impact .cc-impact p {
+    color: #dfd2e9;
+    margin: 0;
+}
+
+/* Etiqueta das estatísticas transferidas */
+.cc-moved-impact .cc-demo-label {
+    font-size: .72rem;
+    color: #f6d4a9;
+    border: 1px solid #f6d4a966;
+    border-radius: 99px;
+    padding: 7px 11px;
+    white-space: nowrap;
+}
+
+/* Organiza os quatro indicadores transferidos */
+.cc-moved-impact .cc-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+/* Cartões dos indicadores transferidos */
+.cc-moved-impact .cc-stat {
+    background: #ffffff12;
+    border: 1px solid #ffffff20;
+    border-radius: 17px;
+    padding: 19px;
+}
+
+/* Ícones dos indicadores */
+.cc-moved-impact .cc-stat i {
+    color: #e9bf8b;
+    font-size: 1.15rem;
+}
+
+/* Números dos indicadores */
+.cc-moved-impact .cc-stat strong {
+    display: block;
+    font-size: 2rem;
+    letter-spacing: -.04em;
+    margin: 10px 0 3px;
+}
+
+/* Legendas dos indicadores */
+.cc-moved-impact .cc-stat span {
+    color: #e1d5e9;
+    font-size: .82rem;
+}
+
+/* Gráficos lado a lado */
+.cc-moved-charts .cc-chart-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+}
+
+
+/* Cartões dos gráficos */
+.cc-moved-charts .cc-chart-card {
+    color: #32194f;
+    background: #fff;
+    border: 1px solid #eadff4;
+    border-radius: 20px;
+    padding: 22px;
+}
+
+/* Título dos gráficos */
+.cc-moved-charts .cc-chart-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 0 5px;
+}
+
+/* Descrição dos gráficos */
+.cc-moved-charts .cc-chart-card p {
+    color: #81778a;
+    font-size: .8rem;
+    margin: 0 0 18px;
+}
+
+/* Área das barras do gráfico */
+.cc-moved-charts .cc-bars {
+    height: 185px;
+    display: flex;
+    align-items: flex-end;
+    gap: 13px;
+    padding: 8px 4px 0;
+    border-bottom: 1px solid #eadff4;
+}
+
+/* Colunas individuais do gráfico */
+.cc-moved-charts .cc-bar-col {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Barras do gráfico */
+.cc-moved-charts .cc-bar {
+    width: min(38px, 75%);
+    border-radius: 9px 9px 3px 3px;
+    background: linear-gradient(180deg, #a77bd0, #63339a);
+    min-height: 7px;
+}
+
+/* Legendas das barras */
+.cc-moved-charts .cc-bar-col span {
+    font-size: .73rem;
+    color: #81778a;
+}
+
+/* Gráfico de linhas */
+.cc-moved-charts .cc-line-chart {
+    width: 100%;
+    height: 185px;
+    display: block;
+}
+
+/* Observação abaixo dos gráficos */
+.cc-moved-charts .cc-chart-note {
+    font-size: .72rem;
+    color: #91879a;
+    margin-top: 12px;
+}
+
+/* Espaçamento da seção de campanhas */
+.cc-campaign-section {
+    padding-top: 28px;
+    padding-bottom: 48px;
+}
+
+/* Organiza quatro campanhas lado a lado */
+.cc-campaign-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Cartões das campanhas */
+.cc-campaign-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #eadff4;
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(61, 31, 91, .08);
+}
+
+/* Área das imagens das campanhas */
+.cc-campaign-image {
+    display: block;
+    height: 175px;
+    overflow: hidden;
+}
+
+/* Ajusta as imagens das campanhas */
+.cc-campaign-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .3s ease;
+}
+
+/* Efeito de zoom nas imagens das campanhas */
+.cc-campaign-card:hover .cc-campaign-image img {
+    transform: scale(1.04);
+}
+
+/* Conteúdo dos cartões de campanhas */
+.cc-campaign-content {
+    padding: 17px;
+}
+
+/* Etiqueta das campanhas */
+.cc-campaign-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #70419b;
+    font-size: .78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: .02em;
+}
+
+/* Títulos das campanhas */
+.cc-campaign-content h3 {
+    margin: 9px 0 7px;
+    color: #32194f;
+    font-size: 1.08rem;
+    font-weight: 800;
+}
+
+/* Descrições das campanhas */
+.cc-campaign-content p {
+    min-height: 48px;
+    margin: 0 0 13px;
+    color: #655a70;
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+/* Links das campanhas */
+.cc-campaign-link {
+    color: #63339a;
+    font-weight: 800;
+    font-size: .85rem;
+    text-decoration: none;
+}
+
+/* Espaçamento dos ícones dos links */
+.cc-campaign-link i {
+    margin-left: 5px;
+}
+
+/* Ajustes de campanhas e estatísticas para telas médias */
+@media (max-width: 900px) {
+    .cc-campaign-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cc-moved-impact .cc-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cc-moved-impact .cc-impact-top {
+        flex-direction: column;
+    }
+}
+
+/* Ajustes de campanhas e gráficos para celulares */
+@media (max-width: 620px) {
+    .cc-campaign-grid,
+    .cc-moved-charts .cc-chart-grid {
+        grid-template-columns: 1fr;
+    }
+    .cc-moved-impact .cc-impact-top {
+        flex-direction: column;
+    }
+    .cc-moved-impact .cc-stat-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .cc-campaign-image {
+        height: 190px;
     }
 }
